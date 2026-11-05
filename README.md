@@ -26,8 +26,9 @@ Equivalent entry points are
 ## Implementation and behavior
 
 - **Python:** standard-library CSV streaming and dictionary aggregation.
-- **Polars:** LazyFrame scanning, native validation and grouping, with streaming
-  execution requested. Both engines share exact ranking and CSV formatting.
+- **Polars:** 32 MiB CSV byte batches, native validation and Int128 grouping,
+  with exact Python-integer merging of campaign partials. Both engines share
+  exact ranking and CSV formatting.
 - Input must match the six-column schema, with real `YYYY-MM-DD` dates,
   nonblank campaign IDs, nonnegative integer counts, and plain decimal spend
   with at most six fractional places. Each input count and spend in millionths
@@ -42,25 +43,33 @@ Equivalent entry points are
 
 ## Measured performance
 
-Full input: **1,043,304,870 bytes**, 50 campaigns. Two runs per engine on Windows 11,
+Full input: **1,043,304,870 bytes**, 50 campaigns. Three runs per implementation on Windows 11,
 Intel i7-11700F (8 cores/16 threads), 31.86 GiB RAM, Python 3.12.12 and Polars 1.35.2.
-Measured on 2026-11-05 with 16 Polars threads and a warm OS file cache.
+Measured on 2026-11-05–06 with 16 Polars threads and a warm OS file cache.
 
 | Engine | Median time | Maximum peak RSS | Median run throughput |
 | --- | ---: | ---: | ---: |
-| Python | 222.504 s | 23.2 MiB | 4.51 MiB/s |
-| Polars | 5.471 s | 1,963.9 MiB | 185.26 MiB/s |
+| Preserved Polars baseline | 4.108 s | 2,028.1 MiB | 242.23 MiB/s |
+| Polars, selected 32 MiB batches | 5.147 s | 568.9 MiB | 193.32 MiB/s |
 
-**Polars is the default: about 40.7x faster.** Choose Python when memory is limited.
-Streaming does not guarantee RSS below input size. Both retain campaign totals;
-Python also caches valid dates. All four runs produced identical totals and CSVs.
+**The default meets the under-1-GB / under-10-second goal on this dataset.**
+Peak RSS fell about 72%, with a 25% time cost versus the preserved baseline.
+All six runs produced identical totals and CSVs. Batch bytes are not an RSS cap:
+campaign cardinality and record size also matter. Unusual literal quotes inside
+unquoted fields use the original parser for compatibility and lose the batch
+memory bound. The standard-library Python engine remains an alternative for
+tighter memory budgets; its earlier measured median was 222.504 s / 23.2 MiB.
 
 Timings include subprocess startup, imports, validation, aggregation, output, and
 result hashing. RSS is the OS process high-water mark, including native memory.
-Background desktop load was uncontrolled; two repetitions show timing variation.
-Commands, individual runs, source/input hashes and hardware details are in
-[review-results.json](benchmarks/review-results.json). Earlier measurements and
-optimization trials remain in `benchmarks/` as supporting evidence.
+Background desktop load was uncontrolled; individual runs show timing variation.
+Thread, expression, streaming-control and batch experiments, trade-offs and
+reproduction commands are in
+[polars-memory-experiments.md](benchmarks/polars-memory-experiments.md).
+The final comparison is in
+[polars-memory-final.json](benchmarks/polars-memory-final.json).
+Earlier Python and Polars measurements remain in
+[review-results.json](benchmarks/review-results.json).
 
 ## Verification
 
@@ -70,10 +79,10 @@ uv run --no-sync ruff check src scripts tests aggregator.py
 uv run --no-sync ruff format --check src scripts tests aggregator.py
 uv run --no-sync python scripts/verify_outputs.py --outputs results
 # Repeat the full benchmark:
-uv run --no-sync python scripts/benchmark.py --repeats 2 --report benchmarks/review-results.json
+uv run --no-sync python scripts/benchmark.py --engines polars-baseline polars --repeats 3 --polars-threads 16 --report benchmarks/polars-memory-final.json
 ```
 
-The suite has 194 tests covering reference calculations, ranking ties, invalid
+The suite has 330 tests covering reference calculations, ranking ties, invalid
 input, precision, CLI entry points, output preservation and chunk boundaries.
 Full-data CSVs also
 passed an independent Decimal ranking/formatting audit. Polars is the only runtime
@@ -89,10 +98,11 @@ docker build -t ad-aggregator .
 docker run --rm -v "${PWD}/data:/data:ro" -v "${PWD}/results:/results" ad-aggregator --input /data/ad_data.csv --output /results
 ```
 
-The image excludes the dataset and installs locked runtime dependencies. Build,
-both-engine smoke tests, and full-data Polars execution passed during review;
-container outputs matched host outputs. Docker timings are excluded from the
-Windows benchmark. Review evidence is in
+The image excludes the dataset and installs locked runtime dependencies. Earlier
+build, both-engine smoke tests, and full-data Polars execution passed during
+review; container outputs matched host outputs. Docker was not rerun for the
+memory optimization. Docker timings are excluded from the Windows benchmark.
+Earlier review evidence is in
 [review-verification.json](benchmarks/review-verification.json).
 
 ## AI disclosure

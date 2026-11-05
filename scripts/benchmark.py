@@ -27,6 +27,8 @@ def worker(args: argparse.Namespace) -> None:
 
     if args.worker == "python":
         from ad_aggregator.python_engine import aggregate
+    elif args.worker == "polars-baseline":
+        from ad_aggregator.polars_baseline import aggregate
     elif args.worker == "optimized":
         from ad_aggregator.optimized_engine import aggregate
     elif args.worker == "multiprocessing":
@@ -77,7 +79,13 @@ def main() -> None:
         "--report", type=Path, default=Path("benchmarks/results.json")
     )
     parser.add_argument("--repeats", type=int, default=3)
-    engines = ["python", "polars", "optimized", "multiprocessing"]
+    engines = [
+        "python",
+        "polars",
+        "optimized",
+        "multiprocessing",
+        "polars-baseline",
+    ]
     parser.add_argument("--worker", choices=engines)
     parser.add_argument("--workers", type=int, default=4)
     parser.add_argument("--chunk-rows", type=int, default=25_000)

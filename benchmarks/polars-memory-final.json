@@ -1,0 +1,148 @@
+{
+  "command": [
+    "D:\\projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+    "scripts/benchmark.py",
+    "--engines",
+    "polars-baseline",
+    "polars",
+    "--repeats",
+    "3",
+    "--polars-threads",
+    "16",
+    "--report",
+    "benchmarks/polars-memory-final.json"
+  ],
+  "source_sha256": {
+    "D:\\projects\\ad-performance-aggregator\\scripts\\benchmark.py": "ecd2a7de01f34f417ee2de7af8f2859ec2680fd5750933084331397c0effad35",
+    "src\\ad_aggregator\\__init__.py": "3f13366a2a7e7c8c2bb038fb2bf21c294cdc0e3e080efe4523715a2d37795d6d",
+    "src\\ad_aggregator\\__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src\\ad_aggregator\\cli.py": "4c0a0591c99eed63273556362a282b3bf32d17f575007b38b0e36c5d8b7c4ecf",
+    "src\\ad_aggregator\\core.py": "d69d7cc94bfdd7ba40d54fe8aced2a97c3ef33080a23028d910b13fd06efb54a",
+    "src\\ad_aggregator\\multiprocessing_engine.py": "6142401cd748dbfa500e6065524d6b24b57b8e3a46536af6df656cac13eb64af",
+    "src\\ad_aggregator\\optimized_engine.py": "bffa6bbd2f19927bfd9b5f292b9a3444ed15b4fea07fdf9f0b9ce3fe23c64dc8",
+    "src\\ad_aggregator\\polars_baseline.py": "9a21bce0e1d00824a5682bc189a5b5f3045e1cce23cfdedcd86e94e8ee3722ad",
+    "src\\ad_aggregator\\polars_engine.py": "06d437a6039805dd9de60d473cae1778a0801cf8d13314b71778a3dbdb5f1470",
+    "src\\ad_aggregator\\polars_experimental.py": "be8916f8c996dfbeef0c36dbbeba656c28606429cce6f5b293f1212f12a1366c",
+    "src\\ad_aggregator\\python_engine.py": "0c9a78417dc1f4eed57248a00374e697d26ac75bb7861d216e1e6080e332f4b3"
+  },
+  "started_utc": "2026-11-05T17:14:18.416585+00:00",
+  "complete": true,
+  "repeats": 3,
+  "engines": [
+    "polars-baseline",
+    "polars"
+  ],
+  "input": "data\\ad_data.csv",
+  "input_bytes": 1043304870,
+  "input_sha256": "4e9c87cc0b408f043917f5f7ee0101ba09899ad79f154358e9a2da374cfd60eb",
+  "python": "3.12.12 (main, Dec  9 2025, 19:02:55) [MSC v.1944 64 bit (AMD64)]",
+  "polars": "1.35.2",
+  "psutil": "7.1.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel",
+  "logical_cpus": 16,
+  "physical_cpus": 8,
+  "workers": 4,
+  "chunk_rows": 25000,
+  "ram_bytes": 34207920128,
+  "polars_threads": 16,
+  "environment": {
+    "POLARS_MAX_THREADS": "16",
+    "POLARS_ENGINE_AFFINITY": null,
+    "POLARS_STREAMING_CHUNK_SIZE": null
+  },
+  "conditions": "Fresh sequential subprocesses; alternating engines. OS cache not flushed. Input SHA256 read before timing. Wall time includes interpreter startup, imports, validation, aggregation, ranking, writing, and result hashing. Peak RSS is maximum sampled sum of simultaneous RSS across the process tree (10 ms requested interval, not a hard upper bound). Includes workers and resource tracker; shared pages may be counted multiple times. Parent OS high-water mark is recorded separately.",
+  "runs": [
+    {
+      "parent_os_peak_rss_bytes": 2113540096,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "peak_rss_bytes": 2101092352,
+      "memory_samples": 61,
+      "engine": "polars-baseline",
+      "repetition": 1,
+      "seconds": 2.857966399998986,
+      "mib_per_second": 348.14022260755564
+    },
+    {
+      "parent_os_peak_rss_bytes": 594538496,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "peak_rss_bytes": 564088832,
+      "memory_samples": 126,
+      "engine": "polars",
+      "repetition": 1,
+      "seconds": 4.431218299998363,
+      "mib_per_second": 224.5371343363808
+    },
+    {
+      "parent_os_peak_rss_bytes": 587870208,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "peak_rss_bytes": 590278656,
+      "memory_samples": 134,
+      "engine": "polars",
+      "repetition": 2,
+      "seconds": 5.14669049999975,
+      "mib_per_second": 193.32288559038278
+    },
+    {
+      "parent_os_peak_rss_bytes": 2093006848,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "peak_rss_bytes": 2092642304,
+      "memory_samples": 68,
+      "engine": "polars-baseline",
+      "repetition": 2,
+      "seconds": 4.162926699998934,
+      "mib_per_second": 239.00806581600784
+    },
+    {
+      "parent_os_peak_rss_bytes": 2126651392,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "peak_rss_bytes": 2119327744,
+      "memory_samples": 75,
+      "engine": "polars-baseline",
+      "repetition": 3,
+      "seconds": 4.10751270000037,
+      "mib_per_second": 242.2324972240431
+    },
+    {
+      "parent_os_peak_rss_bytes": 596484096,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "peak_rss_bytes": 601034752,
+      "memory_samples": 140,
+      "engine": "polars",
+      "repetition": 3,
+      "seconds": 5.480083599999489,
+      "mib_per_second": 181.56165696097307
+    }
+  ],
+  "finished_utc": "2026-11-05T17:14:45.458620+00:00"
+}

@@ -1,0 +1,100 @@
+{
+  "command": [
+    "D:\\projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+    "scripts/benchmark_polars.py",
+    "--module",
+    "polars_baseline",
+    "--threads",
+    "16",
+    "--morsel-size",
+    "10000",
+    "--report",
+    "benchmarks/polars-morsel-10000.json"
+  ],
+  "started_utc": "2026-11-05T17:11:12.936159+00:00",
+  "complete": true,
+  "input_bytes": 1043304870,
+  "input_sha256": "4e9c87cc0b408f043917f5f7ee0101ba09899ad79f154358e9a2da374cfd60eb",
+  "python": "3.12.12 (main, Dec  9 2025, 19:02:55) [MSC v.1944 64 bit (AMD64)]",
+  "polars": "1.35.2",
+  "psutil": "7.1.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel",
+  "physical_cpus": 8,
+  "logical_cpus": 16,
+  "ram_bytes": 34207920128,
+  "source_sha256": {
+    "D:\\projects\\ad-performance-aggregator\\scripts\\benchmark_polars.py": "b3ca8c3ac32ffda3a4360d74304fb8752590505625c403c5b22bbdf4c72e0223",
+    "src\\ad_aggregator\\__init__.py": "3f13366a2a7e7c8c2bb038fb2bf21c294cdc0e3e080efe4523715a2d37795d6d",
+    "src\\ad_aggregator\\__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src\\ad_aggregator\\cli.py": "4c0a0591c99eed63273556362a282b3bf32d17f575007b38b0e36c5d8b7c4ecf",
+    "src\\ad_aggregator\\core.py": "d69d7cc94bfdd7ba40d54fe8aced2a97c3ef33080a23028d910b13fd06efb54a",
+    "src\\ad_aggregator\\multiprocessing_engine.py": "6142401cd748dbfa500e6065524d6b24b57b8e3a46536af6df656cac13eb64af",
+    "src\\ad_aggregator\\optimized_engine.py": "bffa6bbd2f19927bfd9b5f292b9a3444ed15b4fea07fdf9f0b9ce3fe23c64dc8",
+    "src\\ad_aggregator\\polars_baseline.py": "9a21bce0e1d00824a5682bc189a5b5f3045e1cce23cfdedcd86e94e8ee3722ad",
+    "src\\ad_aggregator\\polars_engine.py": "d2235f6a84ed824fda7109c89c692002802114c4d5d1eef0ec585bff4c0c7998",
+    "src\\ad_aggregator\\polars_experimental.py": "be8916f8c996dfbeef0c36dbbeba656c28606429cce6f5b293f1212f12a1366c",
+    "src\\ad_aggregator\\python_engine.py": "0c9a78417dc1f4eed57248a00374e697d26ac75bb7861d216e1e6080e332f4b3"
+  },
+  "conditions": "Sequential fresh subprocesses; thread order reversed on alternate repetitions. Warm OS cache (input hashed first), uncontrolled desktop load. Wall time includes startup, imports, validation, aggregation, ranking, output and hashing. RSS is Windows OS peak working set, including native allocations and resident mapped file pages. No sampled estimate. No cache flush.",
+  "options": {
+    "input": "data\\ad_data.csv",
+    "report": "benchmarks\\polars-morsel-10000.json",
+    "worker": false,
+    "module": "polars_baseline",
+    "threads": [
+      16
+    ],
+    "chunk_size": null,
+    "morsel_size": 10000,
+    "batch_rows": null,
+    "batch_bytes": null,
+    "low_memory": false,
+    "repeats": 3,
+    "reference": "benchmarks\\polars-thread-tuning.json"
+  },
+  "runs": [
+    {
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc",
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052"
+      },
+      "campaigns": 50,
+      "peak_rss_bytes": 2054307840,
+      "actual_threads": 16,
+      "threads": 16,
+      "repetition": 1,
+      "seconds": 3.9896637000001647,
+      "mib_per_second": 249.3877011991062
+    },
+    {
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc",
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052"
+      },
+      "campaigns": 50,
+      "peak_rss_bytes": 2110464000,
+      "actual_threads": 16,
+      "threads": 16,
+      "repetition": 2,
+      "seconds": 3.8545873000002757,
+      "mib_per_second": 258.127000703938
+    },
+    {
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc",
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052"
+      },
+      "campaigns": 50,
+      "peak_rss_bytes": 2052206592,
+      "actual_threads": 16,
+      "threads": 16,
+      "repetition": 3,
+      "seconds": 4.0611608999988675,
+      "mib_per_second": 244.99720232725548
+    }
+  ]
+}

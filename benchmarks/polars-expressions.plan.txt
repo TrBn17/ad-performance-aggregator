@@ -1,0 +1,9 @@
+AGGREGATE[maintain_order: false]
+  [col("impressions").cast(Int128).sum(), col("clicks").cast(Int128).sum(), col("spend").cast(Int128).sum(), col("conversions").cast(Int128).sum(), col("_invalid").any()] BY [col("campaign_id")]
+  FROM
+  SELECT [col("campaign_id"), [([([([([([([([([([([([([([(col("campaign_id").str.contains(["[^\s\x1c-\x1f]"])) & (col("date").str.contains(["^[0-9]{4}-[0-9]{2}-[0-9]{2}$"]))]) & (col("date").str.strptime(["raise"]).is_not_null())]) & ([(col("date").str.slice([dyn int: 0, dyn int: 4])) != ("0000")])]) & (col("spend").str.contains(["^[0-9]+(?:\.[0-9]{1,6})?$"]))]) & (col("_spend").is_not_null())]) & ([(col("_spend")) >= (0)])]) & ([(col("_spend")) <= (9223372036854775807)])]) & (col("impressions").str.contains(["^[0-9]+$"]))]) & (col("_impressions").is_not_null())]) & (col("clicks").str.contains(["^[0-9]+$"]))]) & (col("_clicks").is_not_null())]) & (col("conversions").str.contains(["^[0-9]+$"]))]) & (col("_conversions").is_not_null())]) & ([([([([([([(col("campaign_id").str.len_chars()) <= (131072)]) & ([(col("date").str.len_chars()) <= (131072)])]) & ([(col("impressions").str.len_chars()) <= (131072)])]) & ([(col("clicks").str.len_chars()) <= (131072)])]) & ([(col("spend").str.len_chars()) <= (131072)])]) & ([(col("conversions").str.len_chars()) <= (131072)])])].fill_null([false]).not().alias("_invalid"), col("_spend").alias("spend"), col("_impressions").alias("impressions"), col("_clicks").alias("clicks"), col("_conversions").alias("conversions")]
+     WITH_COLUMNS:
+     [col("spend").str.strip_chars_start(["0"]).str.pad_start([1]).cast(Decimal(38, 6)).to_physical().cast(Int64).alias("_spend"), col("impressions").cast(Int64).alias("_impressions"), col("clicks").cast(Int64).alias("_clicks"), col("conversions").cast(Int64).alias("_conversions")]
+      Csv SCAN [data/ad_data.csv]
+      PROJECT 6/6 COLUMNS
+      ESTIMATED ROWS: 26608132
