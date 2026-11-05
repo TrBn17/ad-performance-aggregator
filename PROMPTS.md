@@ -78,5 +78,40 @@ Preserve `AGENTS.md`, `REQUIREMENTS.md`, and `PROMPTS.md` without modification.
 
 Do not force-push or overwrite remote changes. Report the commit hash, repository URL, and push status.
 
-## Prompt 5 (Addition)
+## Prompt 5 (Additional)
 Add link data to readme: https://github.com/flinters-vietnam/recruitment/blob/main/fv-sec-001-software-engineer-challenge/ad_data.csv.zip, commit and push to main branch
+
+## Prompt 6 - Optimization (Python)
+
+As we observed in previous benchmarks, the Python implementation is significantly slower than Polars but consumes very little memory.
+
+Let's experiment with two optimization approaches:
+
+1. **Optimized Streaming:** Reduce unnecessary object creation, generator overhead, and redundant validation.
+2. **Chunked Multiprocessing:** Process CSV chunks in parallel using safe record boundaries, then merge campaign aggregates.
+
+Keep the current Python implementation as the baseline. Benchmark all three approaches on the full dataset, comparing execution time, peak RAM, and throughput.
+
+Ensure identical outputs, preserve correctness and validation, and analyze the performance–memory trade-offs.
+
+Document the experimental results and recommend the best approach based on measured evidence.
+
+Do not modify `AGENTS.md`, `REQUIREMENTS.md`, or `PROMPTS.md`.
+
+## Prompt 7 - Optimization (Polars)
+
+Our current Polars implementation processes ~1 GB in about 5 seconds but consumes nearly 2 GB of RAM.
+
+Let's explore ways to reduce peak memory usage while maintaining strong performance:
+
+1. **Thread tuning:** Benchmark different `POLARS_MAX_THREADS` settings (2, 4, 8, 16).
+2. **Expression optimization:** Reduce unnecessary allocations, intermediate columns, and expensive type conversions.
+3. **Streaming optimization:** Investigate execution plans, chunk sizes, and bounded batch processing.
+
+Keep the current implementation as the baseline. Benchmark each approach on the full dataset, measuring execution time, peak RSS, and throughput.
+
+Preserve strict validation and exact output equivalence. Aim for **under 1 GB RAM and under 10 seconds**, if achievable.
+
+Document all experiments, compare trade-offs, and retain the best-performing practical solution based on measured evidence.
+
+Do not modify `AGENTS.md`, `REQUIREMENTS.md`, or `PROMPTS.md`.
