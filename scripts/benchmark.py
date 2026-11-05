@@ -27,9 +27,18 @@ def worker(args: argparse.Namespace) -> None:
 
     if args.worker == "python":
         from ad_aggregator.python_engine import aggregate
+    elif args.worker == "optimized":
+        from ad_aggregator.optimized_engine import aggregate
+    elif args.worker == "multiprocessing":
+        from ad_aggregator.multiprocessing_engine import aggregate
     else:
         from ad_aggregator.polars_engine import aggregate
-    totals = aggregate(args.input)
+    if args.worker == "multiprocessing":
+        totals = aggregate(
+            args.input, workers=args.workers, chunk_rows=args.chunk_rows
+        )
+    else:
+        totals = aggregate(args.input)
     write_results(totals, args.output)
     aggregate_hash = hashlib.sha256(
         json.dumps(sorted(totals.items())).encode()
@@ -49,7 +58,7 @@ def worker(args: argparse.Namespace) -> None:
     print(
         json.dumps(
             {
-                "peak_rss_bytes": peak,
+                "parent_os_peak_rss_bytes": peak,
                 "campaigns": len(totals),
                 "aggregate_sha256": aggregate_hash,
                 "output_sha256": hashes,
@@ -68,15 +77,20 @@ def main() -> None:
         "--report", type=Path, default=Path("benchmarks/results.json")
     )
     parser.add_argument("--repeats", type=int, default=3)
-    parser.add_argument("--worker", choices=["python", "polars"])
+    engines = ["python", "polars", "optimized", "multiprocessing"]
+    parser.add_argument("--worker", choices=engines)
+    parser.add_argument("--workers", type=int, default=4)
+    parser.add_argument("--chunk-rows", type=int, default=25_000)
     parser.add_argument(
         "--engines",
         nargs="+",
-        choices=["python", "polars"],
+        choices=engines,
         default=["python", "polars"],
     )
     parser.add_argument("--polars-threads", type=int)
     args = parser.parse_args()
+    if args.workers < 1 or args.chunk_rows < 1:
+        parser.error("--workers and --chunk-rows must be positive")
     if args.worker:
         worker(args)
         return
@@ -94,7 +108,9 @@ def main() -> None:
         "command": [sys.executable, *sys.argv],
         "source_sha256": {
             str(path): digest(path)
-            for path in sorted(Path("src/ad_aggregator").glob("*.py"))
+            for path in sorted(
+                [*Path("src/ad_aggregator").glob("*.py"), Path(__file__)]
+            )
         },
         "started_utc": datetime.now(timezone.utc).isoformat(),
         "complete": False,
@@ -110,6 +126,8 @@ def main() -> None:
         "processor": platform.processor(),
         "logical_cpus": psutil.cpu_count(),
         "physical_cpus": psutil.cpu_count(logical=False),
+        "workers": args.workers,
+        "chunk_rows": args.chunk_rows,
         "ram_bytes": psutil.virtual_memory().total,
         "polars_threads": args.polars_threads or pl.thread_pool_size(),
         "environment": {
@@ -124,7 +142,10 @@ def main() -> None:
         "OS cache not flushed. Input SHA256 read before timing. Wall time "
         "includes interpreter startup, imports, validation, aggregation, "
         "ranking, writing, and result hashing. "
-        "Peak RSS is OS process high-water mark (Windows peak working set).",
+        "Peak RSS is maximum sampled sum of simultaneous RSS across the "
+        "process tree (10 ms requested interval, not a hard upper bound). "
+        "Includes workers and resource tracker; shared pages may be counted "
+        "multiple times. Parent OS high-water mark is recorded separately.",
         "runs": [],
     }
     reference = None
@@ -139,22 +160,53 @@ def main() -> None:
                 str(args.input),
                 "--output",
                 str(args.output / engine),
+                "--workers",
+                str(args.workers),
+                "--chunk-rows",
+                str(args.chunk_rows),
             ]
             start = time.perf_counter()
             try:
-                completed = subprocess.run(
+                process = subprocess.Popen(
                     command,
-                    check=True,
-                    capture_output=True,
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
                     text=True,
                     env=environment,
                 )
+                root = psutil.Process(process.pid)
+                peak_tree = 0
+                samples = 0
+                while True:
+                    resident = 0
+                    try:
+                        tree = [root, *root.children(recursive=True)]
+                    except psutil.NoSuchProcess:
+                        tree = []
+                    for member in tree:
+                        try:
+                            resident += member.memory_info().rss
+                        except psutil.NoSuchProcess:
+                            pass
+                    peak_tree = max(peak_tree, resident)
+                    samples += 1
+                    try:
+                        stdout, stderr = process.communicate(timeout=0.01)
+                        break
+                    except subprocess.TimeoutExpired:
+                        continue
+                if process.returncode:
+                    raise subprocess.CalledProcessError(
+                        process.returncode, command, stdout, stderr
+                    )
             except subprocess.CalledProcessError as error:
                 raise RuntimeError(
                     f"{engine} benchmark failed: {error.stderr.strip()}"
                 ) from error
             elapsed = time.perf_counter() - start
-            result = json.loads(completed.stdout)
+            result = json.loads(stdout)
+            result["peak_rss_bytes"] = peak_tree
+            result["memory_samples"] = samples
             identity = (result["aggregate_sha256"], result["output_sha256"])
             if reference is None:
                 reference = identity

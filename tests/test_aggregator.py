@@ -5,11 +5,21 @@ from fractions import Fraction
 
 import pytest
 
-from ad_aggregator import polars_engine, python_engine
+from ad_aggregator import (
+    multiprocessing_engine,
+    optimized_engine,
+    polars_engine,
+    python_engine,
+)
 from ad_aggregator.cli import main
 from ad_aggregator.core import FIELDS, InputError, fixed, write_results
 
-ENGINES = [python_engine.aggregate, polars_engine.aggregate]
+ENGINES = [
+    python_engine.aggregate,
+    polars_engine.aggregate,
+    optimized_engine.aggregate,
+    multiprocessing_engine.aggregate,
+]
 
 
 def make_csv(tmp_path, rows, header=FIELDS):
@@ -173,7 +183,9 @@ def test_ranking_before_rounding(tmp_path):
     assert fixed(Fraction(1015, 1000), 2) == "1.02"
 
 
-@pytest.mark.parametrize("engine", ["python", "polars"])
+@pytest.mark.parametrize(
+    "engine", ["python", "polars", "optimized", "multiprocessing"]
+)
 def test_cli(tmp_path, engine, capsys):
     path = make_csv(tmp_path, [["A", "2025-01-01", 10, 1, 1, 1]])
     assert (

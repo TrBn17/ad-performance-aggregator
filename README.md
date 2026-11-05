@@ -17,7 +17,10 @@ uv run --no-sync ad-aggregate --input data/ad_data.csv --output results/
 uv run --no-sync ad-aggregate --engine python --input data/ad_data.csv --output results/python/
 ```
 
-`--engine python|polars` defaults to **polars**. Equivalent entry points are
+`--engine python|polars|optimized|multiprocessing` defaults to **polars**.
+The two experimental Python variants are described in
+[python-experiments.md](benchmarks/python-experiments.md).
+Equivalent entry points are
 `python aggregator.py` and `python -m ad_aggregator` in the installed environment.
 
 ## Implementation and behavior
@@ -70,8 +73,9 @@ uv run --no-sync python scripts/verify_outputs.py --outputs results
 uv run --no-sync python scripts/benchmark.py --repeats 2 --report benchmarks/review-results.json
 ```
 
-The suite has 98 tests covering reference calculations, ranking ties, invalid
-input, precision, CLI entry points and output preservation. Full-data CSVs also
+The suite has 194 tests covering reference calculations, ranking ties, invalid
+input, precision, CLI entry points, output preservation and chunk boundaries.
+Full-data CSVs also
 passed an independent Decimal ranking/formatting audit. Polars is the only runtime
 dependency; pytest, psutil and Ruff support testing, RSS measurement and linting.
 Versions and package hashes are pinned in `uv.lock`.

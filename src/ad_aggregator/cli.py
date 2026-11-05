@@ -16,7 +16,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--input", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument(
-        "--engine", choices=["python", "polars"], default="polars"
+        "--engine",
+        choices=["python", "polars", "optimized", "multiprocessing"],
+        default="polars",
     )
     args = parser.parse_args(argv)
     try:
@@ -27,6 +29,10 @@ def main(argv: list[str] | None = None) -> int:
             raise InputError("Output files must not overwrite the input CSV")
         if args.engine == "python":
             from .python_engine import aggregate
+        elif args.engine == "optimized":
+            from .optimized_engine import aggregate
+        elif args.engine == "multiprocessing":
+            from .multiprocessing_engine import aggregate
         else:
             from .polars_engine import aggregate
         totals = aggregate(args.input)

@@ -10,11 +10,22 @@ from pathlib import Path
 
 import pytest
 
-from ad_aggregator import core, polars_engine, python_engine
+from ad_aggregator import (
+    core,
+    multiprocessing_engine,
+    optimized_engine,
+    polars_engine,
+    python_engine,
+)
 from ad_aggregator.cli import main
 from ad_aggregator.core import FIELDS, OUTPUT_FIELDS, write_results
 
-ENGINES = [python_engine.aggregate, polars_engine.aggregate]
+ENGINES = [
+    python_engine.aggregate,
+    polars_engine.aggregate,
+    optimized_engine.aggregate,
+    multiprocessing_engine.aggregate,
+]
 HEADER = ",".join(FIELDS) + "\n"
 
 
@@ -67,7 +78,12 @@ def test_invalid_utf8(tmp_path, engine):
                 "--output",
                 str(tmp_path / "out"),
                 "--engine",
-                "python" if engine is python_engine.aggregate else "polars",
+                {
+                    python_engine.aggregate: "python",
+                    polars_engine.aggregate: "polars",
+                    optimized_engine.aggregate: "optimized",
+                    multiprocessing_engine.aggregate: "multiprocessing",
+                }[engine],
             ]
         )
         == 1
@@ -216,7 +232,9 @@ def test_rows_without_filesystem():
 
 
 @pytest.mark.parametrize("entry", ["script", "module", "console"])
-@pytest.mark.parametrize("engine", ["python", "polars"])
+@pytest.mark.parametrize(
+    "engine", ["python", "polars", "optimized", "multiprocessing"]
+)
 def test_cli_subprocess(tmp_path, entry, engine):
     if entry == "script":
         command = [sys.executable, "aggregator.py"]
