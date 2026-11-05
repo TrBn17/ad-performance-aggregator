@@ -1,0 +1,26 @@
+{
+  "protected_sha256": {
+    "AGENTS.md": "6894fdf328f44a32759550962a6da9dee096bbc84a14bdb391f4a6de3b73eff9",
+    "REQUIREMENTS.md": "266b998d07dfa169382a9a61f67ab925ac251079f49a27fabe0cd713a79fd739",
+    "PROMPTS.md": "a80a32b944682a5aafc29cd4a9c04eaff5f5bf21c0f5d8ebda58a3e5cf677033"
+  },
+  "source_matches_benchmark": true,
+  "dataset_matches_original": true,
+  "all_candidate_and_final_totals_match": true,
+  "full_csv_sha256": {
+    "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+    "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+  },
+  "pytest_passed": 98,
+  "ruff_checks": "passed",
+  "docker_image": "sha256:458a346f475cc4d7f3d5a58840811f0c60daa44ddf66fb4fb77b428755924acd",
+  "docker_python": "3.12.16",
+  "docker_polars": "1.35.2",
+  "docker_smoke_engines": [
+    "python",
+    "polars"
+  ],
+  "docker_full_dataset_engine": "polars",
+  "docker_missing_input_exit": 1,
+  "docker_invalid_engine_exit": 2
+}

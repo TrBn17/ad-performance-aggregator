@@ -1,0 +1,86 @@
+{
+  "command": [
+    "D:\\projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+    "scripts/benchmark.py",
+    "--engines",
+    "polars",
+    "--repeats",
+    "3",
+    "--report",
+    "benchmarks/polars-before.json"
+  ],
+  "source_sha256": {
+    "src\\ad_aggregator\\__init__.py": "3f13366a2a7e7c8c2bb038fb2bf21c294cdc0e3e080efe4523715a2d37795d6d",
+    "src\\ad_aggregator\\__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "src\\ad_aggregator\\cli.py": "a33e959e39e838fa905a50c5b374ec6d1c206086f042c22b46e2f1db72c9a94d",
+    "src\\ad_aggregator\\core.py": "4f94a23ade0e4a9921ba8edda1d6775526d8b9c48218c98a544ef98618482afc",
+    "src\\ad_aggregator\\polars_engine.py": "079d1841a60d7558b0568738e202056fbaefcbb5db926e544dd65189e86bcd44",
+    "src\\ad_aggregator\\python_engine.py": "39c1a5ebbf9d8fd5f6e1c779cd1576fa6157fbbea2bc9d0c78af4822da1a3d7f"
+  },
+  "started_utc": "2026-11-05T14:43:27.689369+00:00",
+  "complete": true,
+  "repeats": 3,
+  "engines": [
+    "polars"
+  ],
+  "input": "data\\ad_data.csv",
+  "input_bytes": 1043304870,
+  "input_sha256": "4e9c87cc0b408f043917f5f7ee0101ba09899ad79f154358e9a2da374cfd60eb",
+  "python": "3.12.12 (main, Dec  9 2025, 19:02:55) [MSC v.1944 64 bit (AMD64)]",
+  "polars": "1.35.2",
+  "psutil": "7.1.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel",
+  "logical_cpus": 16,
+  "physical_cpus": 8,
+  "ram_bytes": 34207920128,
+  "polars_threads": 16,
+  "environment": {
+    "POLARS_MAX_THREADS": null,
+    "POLARS_ENGINE_AFFINITY": null,
+    "POLARS_STREAMING_CHUNK_SIZE": null
+  },
+  "conditions": "Fresh sequential subprocesses; alternating engines. OS cache not flushed. Input SHA256 read before timing. Wall time includes interpreter startup, imports, validation, aggregation, ranking, writing, and result hashing. Peak RSS is OS process high-water mark (Windows peak working set).",
+  "runs": [
+    {
+      "peak_rss_bytes": 2074218496,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "engine": "polars",
+      "repetition": 1,
+      "seconds": 4.178826800000024,
+      "mib_per_second": 238.09865934155388
+    },
+    {
+      "peak_rss_bytes": 2017714176,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "engine": "polars",
+      "repetition": 2,
+      "seconds": 4.419047100000171,
+      "mib_per_second": 225.15556774683915
+    },
+    {
+      "peak_rss_bytes": 2094182400,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "engine": "polars",
+      "repetition": 3,
+      "seconds": 4.162009200000284,
+      "mib_per_second": 239.06075428677417
+    }
+  ],
+  "finished_utc": "2026-11-05T14:43:41.584124+00:00"
+}

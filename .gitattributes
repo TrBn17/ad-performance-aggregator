@@ -1,0 +1,9 @@
+# Keep code and generated output consistent across platforms.
+* text=auto eol=lf
+
+# Preserve benchmarked source, supplied documents and verified CSV bytes.
+src/**/*.py -text
+AGENTS.md -text
+REQUIREMENTS.md -text
+PROMPTS.md -text
+/results/*.csv -text

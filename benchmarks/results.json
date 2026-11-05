@@ -1,0 +1,95 @@
+{
+  "input": "data\\ad_data.csv",
+  "input_bytes": 1043304870,
+  "input_sha256": "4e9c87cc0b408f043917f5f7ee0101ba09899ad79f154358e9a2da374cfd60eb",
+  "python": "3.12.12 (main, Dec  9 2025, 19:02:55) [MSC v.1944 64 bit (AMD64)]",
+  "polars": "1.35.2",
+  "psutil": "7.1.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "processor": "Intel64 Family 6 Model 167 Stepping 1, GenuineIntel",
+  "logical_cpus": 16,
+  "physical_cpus": 8,
+  "ram_bytes": 34207920128,
+  "polars_threads": 16,
+  "conditions": "Sequential fresh subprocesses, alternating engine order; OS cache not flushed. Input SHA256 read before timing. Wall time includes interpreter startup, imports, validation, aggregation, ranking, writing, and result hashing. Peak RSS is OS process high-water mark (Windows peak working set).",
+  "runs": [
+    {
+      "peak_rss_bytes": 23949312,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "engine": "python",
+      "repetition": 1,
+      "seconds": 143.67377690000012,
+      "mib_per_second": 6.925223796358351
+    },
+    {
+      "peak_rss_bytes": 2158325760,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "engine": "polars",
+      "repetition": 1,
+      "seconds": 3.530652200000077,
+      "mib_per_second": 281.8099892990139
+    },
+    {
+      "peak_rss_bytes": 2132193280,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "engine": "polars",
+      "repetition": 2,
+      "seconds": 3.638491199999862,
+      "mib_per_second": 273.4575965720624
+    },
+    {
+      "peak_rss_bytes": 23744512,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "engine": "python",
+      "repetition": 2,
+      "seconds": 135.0953912,
+      "mib_per_second": 7.364966708801844
+    },
+    {
+      "peak_rss_bytes": 24014848,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "engine": "python",
+      "repetition": 3,
+      "seconds": 158.73829279999973,
+      "mib_per_second": 6.268009067945345
+    },
+    {
+      "peak_rss_bytes": 2126368768,
+      "campaigns": 50,
+      "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      },
+      "engine": "polars",
+      "repetition": 3,
+      "seconds": 3.6076593000002504,
+      "mib_per_second": 275.79462913820396
+    }
+  ]
+}

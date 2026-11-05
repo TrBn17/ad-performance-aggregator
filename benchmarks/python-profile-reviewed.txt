@@ -1,0 +1,29 @@
+First 100000 records from data\ad_data.csv
+         3302892 function calls (3302865 primitive calls) in 2.129 seconds
+
+   Ordered by: cumulative time
+   List reduced from 81 to 20 due to restriction <20>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    2.129    2.129 D:\projects\ad-performance-aggregator\src\ad_aggregator\python_engine.py:23(aggregate)
+        1    1.079    1.079    2.117    2.117 D:\projects\ad-performance-aggregator\src\ad_aggregator\python_engine.py:30(aggregate_rows)
+   100000    0.106    0.000    0.395    0.000 {built-in method builtins.all}
+   400000    0.124    0.000    0.289    0.000 D:\projects\ad-performance-aggregator\src\ad_aggregator\python_engine.py:62(<genexpr>)
+   400181    0.232    0.000    0.232    0.000 {method 'fullmatch' of 're.Pattern' objects}
+   100000    0.106    0.000    0.184    0.000 {built-in method builtins.any}
+   700000    0.088    0.000    0.088    0.000 D:\projects\ad-performance-aggregator\src\ad_aggregator\python_engine.py:51(<genexpr>)
+   400000    0.083    0.000    0.083    0.000 {method 'lstrip' of 'str' objects}
+   500000    0.077    0.000    0.077    0.000 D:\projects\ad-performance-aggregator\src\ad_aggregator\python_engine.py:76(<genexpr>)
+   100000    0.053    0.000    0.053    0.000 {built-in method builtins.max}
+200130/200119    0.036    0.000    0.036    0.000 {built-in method builtins.len}
+   100002    0.034    0.000    0.034    0.000 {method 'get' of 'dict' objects}
+   100000    0.033    0.000    0.033    0.000 {method 'partition' of 'str' objects}
+   100000    0.032    0.000    0.032    0.000 {method 'ljust' of 'str' objects}
+   100000    0.026    0.000    0.026    0.000 {method 'strip' of 'str' objects}
+        1    0.000    0.000    0.012    0.012 C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\pathlib.py:1005(open)
+        1    0.012    0.012    0.012    0.012 {built-in method _io.open}
+      476    0.002    0.000    0.004    0.000 <frozen codecs>:319(decode)
+      476    0.001    0.000    0.002    0.000 C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\encodings\utf_8_sig.py:54(_buffer_decode)
+        3    0.000    0.000    0.002    0.001 C:\Users\Admin\AppData\Roaming\uv\python\cpython-3.12.12-windows-x86_64-none\Lib\re\__init__.py:226(compile)
+
+
