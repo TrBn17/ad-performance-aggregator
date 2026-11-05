@@ -1,0 +1,139 @@
+{
+  "build_command": [
+    "docker",
+    "build",
+    "-t",
+    "ad-aggregator:scalability",
+    "."
+  ],
+  "image": {
+    "Id": "sha256:3153db07dd2433e7eef4cab1ef3e3920a8bb9c1d3f78d158b02615c1337dcccc",
+    "RepoTags": [
+      "ad-aggregator:scalability"
+    ],
+    "RepoDigests": [
+      "ad-aggregator@sha256:3153db07dd2433e7eef4cab1ef3e3920a8bb9c1d3f78d158b02615c1337dcccc"
+    ],
+    "Created": "2026-11-05T17:38:50.283358954Z",
+    "Os": "linux",
+    "Architecture": "amd64"
+  },
+  "docker": {
+    "ServerVersion": "29.4.0",
+    "OperatingSystem": "Docker Desktop",
+    "OSType": "linux",
+    "Architecture": "x86_64",
+    "KernelVersion": "6.6.87.2-microsoft-standard-WSL2",
+    "NCPU": 16,
+    "MemTotal": 16691412992,
+    "CgroupVersion": "2",
+    "ContainersRunning": 14
+  },
+  "host": "Windows-11-10.0.26200-SP0",
+  "source_sha256": {
+    "Dockerfile": "777a95e9eeac05b03cdf170c1871237823739e148317cdfe32dbc9a3b112134d",
+    "uv.lock": "cfd55e43dbfc4fa3a68aeefa4ba698dd01227c23a55607f159dbbc59659a4843",
+    "pyproject.toml": "f7f9503d42a8ab576a94b451041434d4ad2cadd159e3090e4eef3ba65cb56d1e",
+    "D:\\projects\\ad-performance-aggregator\\scripts\\validate_docker_cli.py": "b80d5614e59623b2ead6704f8366fa157309b9395176698df869a0fbe73baeb2"
+  },
+  "protected_sha256": {
+    "AGENTS.md": "6894fdf328f44a32759550962a6da9dee096bbc84a14bdb391f4a6de3b73eff9",
+    "REQUIREMENTS.md": "266b998d07dfa169382a9a61f67ab925ac251079f49a27fabe0cd713a79fd739",
+    "PROMPTS.md": "7f88ae1be20972e8220a14fb93ef677d6775cd2166cf745ee4357ae3962abdfc"
+  },
+  "cli_runs": [
+    {
+      "campaigns": 50,
+      "command": [
+        "docker",
+        "create",
+        "--name",
+        "ad-scalability-cli-50",
+        "--cpus",
+        "16",
+        "--memory",
+        "1000000000",
+        "--memory-swap",
+        "1000000000",
+        "--env",
+        "POLARS_MAX_THREADS=16",
+        "--mount",
+        "type=volume,src=ad-aggregator-scalability-v1,dst=/study",
+        "ad-aggregator:scalability",
+        "--input",
+        "/study/data/original.csv",
+        "--output",
+        "/study/cli-output/50"
+      ],
+      "container_id": "a5c459a3565e08211ef751378221e0bf21f35654112abc8a2662654b2ee6b17b",
+      "start_attach_wall_seconds": 5.604510199998913,
+      "logs": "",
+      "state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-11-05T17:47:03.887017581Z",
+        "FinishedAt": "2026-11-05T17:47:09.099518544Z"
+      },
+      "memory_limit_bytes": 1000000000,
+      "memory_plus_swap_limit_bytes": 1000000000,
+      "output_sha256": {
+        "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+        "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+      }
+    },
+    {
+      "campaigns": 100000,
+      "command": [
+        "docker",
+        "create",
+        "--name",
+        "ad-scalability-cli-100000",
+        "--cpus",
+        "16",
+        "--memory",
+        "1000000000",
+        "--memory-swap",
+        "1000000000",
+        "--env",
+        "POLARS_MAX_THREADS=16",
+        "--mount",
+        "type=volume,src=ad-aggregator-scalability-v1,dst=/study",
+        "ad-aggregator:scalability",
+        "--input",
+        "/study/data/synthetic-v1/campaigns-100000.csv",
+        "--output",
+        "/study/cli-output/100000"
+      ],
+      "container_id": "5d4096416dcaedee2b8387a71cba93c323de695b7ec59d557cdb8a62985daa3a",
+      "start_attach_wall_seconds": 15.053453299999092,
+      "logs": "",
+      "state": {
+        "Status": "exited",
+        "Running": false,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "Pid": 0,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-11-05T17:47:10.577970228Z",
+        "FinishedAt": "2026-11-05T17:47:25.163677854Z"
+      },
+      "memory_limit_bytes": 1000000000,
+      "memory_plus_swap_limit_bytes": 1000000000,
+      "output_sha256": {
+        "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+        "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+      }
+    }
+  ],
+  "complete": true
+}

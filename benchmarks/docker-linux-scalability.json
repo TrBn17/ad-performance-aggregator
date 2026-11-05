@@ -1,0 +1,599 @@
+{
+  "command": [
+    "/app/.venv/bin/python",
+    "/repo/scripts/benchmark_linux.py",
+    "--report",
+    "/reports/docker-linux-scalability.json"
+  ],
+  "started_utc": "2026-11-05T17:41:49.355117+00:00",
+  "complete": true,
+  "python": "3.12.16 (main, Nov  5 2026, 07:58:20) [GCC 14.2.0]",
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.41",
+  "cpu_count": 16,
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "cpu_info": "processor\t: 0\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 0\ncpu cores\t: 8\napicid\t\t: 0\ninitial apicid\t: 0\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 1\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 0\ncpu cores\t: 8\napicid\t\t: 1\ninitial apicid\t: 1\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 2\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 1\ncpu cores\t: 8\napicid\t\t: 2\ninitial apicid\t: 2\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 3\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 1\ncpu cores\t: 8\napicid\t\t: 3\ninitial apicid\t: 3\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 4\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 2\ncpu cores\t: 8\napicid\t\t: 4\ninitial apicid\t: 4\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 5\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 2\ncpu cores\t: 8\napicid\t\t: 5\ninitial apicid\t: 5\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 6\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 3\ncpu cores\t: 8\napicid\t\t: 6\ninitial apicid\t: 6\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 7\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 3\ncpu cores\t: 8\napicid\t\t: 7\ninitial apicid\t: 7\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 8\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 4\ncpu cores\t: 8\napicid\t\t: 8\ninitial apicid\t: 8\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 9\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 4\ncpu cores\t: 8\napicid\t\t: 9\ninitial apicid\t: 9\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 10\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 5\ncpu cores\t: 8\napicid\t\t: 10\ninitial apicid\t: 10\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 11\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 5\ncpu cores\t: 8\napicid\t\t: 11\ninitial apicid\t: 11\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 12\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 6\ncpu cores\t: 8\napicid\t\t: 12\ninitial apicid\t: 12\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 13\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 6\ncpu cores\t: 8\napicid\t\t: 13\ninitial apicid\t: 13\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 14\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 7\ncpu cores\t: 8\napicid\t\t: 14\ninitial apicid\t: 14\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:\n\nprocessor\t: 15\nvendor_id\t: GenuineIntel\ncpu family\t: 6\nmodel\t\t: 167\nmodel name\t: 11th Gen Intel(R) Core(TM) i7-11700F @ 2.50GHz\nstepping\t: 1\nmicrocode\t: 0xffffffff\ncpu MHz\t\t: 2495.996\ncache size\t: 16384 KB\nphysical id\t: 0\nsiblings\t: 16\ncore id\t\t: 7\ncpu cores\t: 8\napicid\t\t: 15\ninitial apicid\t: 15\nfpu\t\t: yes\nfpu_exception\t: yes\ncpuid level\t: 27\nwp\t\t: yes\nflags\t\t: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon rep_good nopl xtopology tsc_reliable nonstop_tsc cpuid tsc_known_freq pni pclmulqdq vmx ssse3 fma cx16 pdcm pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch ssbd ibrs ibpb stibp ibrs_enhanced tpr_shadow ept vpid ept_ad fsgsbase tsc_adjust bmi1 avx2 smep bmi2 erms invpcid avx512f avx512dq rdseed adx smap avx512ifma clflushopt avx512cd sha_ni avx512bw avx512vl xsaveopt xsavec xgetbv1 xsaves vnmi avx512vbmi umip avx512_vbmi2 gfni vaes vpclmulqdq avx512_vnni avx512_bitalg avx512_vpopcntdq rdpid fsrm md_clear flush_l1d arch_capabilities\nvmx flags\t: vnmi invvpid ept_x_only ept_ad ept_1gb tsc_offset vtpr ept vpid unrestricted_guest ept_mode_based_exec tsc_scaling\nbugs\t\t: spectre_v1 spectre_v2 spec_store_bypass swapgs mmio_stale_data retbleed eibrs_pbrsb bhi\nbogomips\t: 4991.99\nclflush size\t: 64\ncache_alignment\t: 64\naddress sizes\t: 39 bits physical, 48 bits virtual\npower management:",
+  "memory_info": "MemTotal:       16300208 kB\nMemFree:         2796824 kB\nMemAvailable:   12597740 kB\nBuffers:          539956 kB\nCached:          9128968 kB\nSwapCached:            0 kB\nActive:          1341484 kB\nInactive:       11087568 kB\nActive(anon):      16464 kB\nInactive(anon):  2789348 kB\nActive(file):    1325020 kB\nInactive(file):  8298220 kB\nUnevictable:           0 kB\nMlocked:               0 kB\nSwapTotal:       4194304 kB\nSwapFree:        4194304 kB\nDirty:                48 kB\nWriteback:           200 kB\nAnonPages:       2759540 kB\nMapped:          2158888 kB\nShmem:             46008 kB\nKReclaimable:     426272 kB\nSlab:             577532 kB\nSReclaimable:     426272 kB\nSUnreclaim:       151260 kB\nKernelStack:       24376 kB\nPageTables:       214484 kB\nSecPageTables:         0 kB\nNFS_Unstable:          0 kB\nBounce:                0 kB\nWritebackTmp:          0 kB\nCommitLimit:    12344408 kB\nCommitted_AS:   11552972 kB\nVmallocTotal:   34359738367 kB\nVmallocUsed:       50616 kB\nVmallocChunk:          0 kB\nPercpu:             7872 kB\nHardwareCorrupted:     0 kB\nAnonHugePages:         0 kB\nShmemHugePages:        0 kB\nShmemPmdMapped:        0 kB\nFileHugePages:         0 kB\nFilePmdMapped:         0 kB\nUnaccepted:            0 kB\nHugePages_Total:       0\nHugePages_Free:        0\nHugePages_Rsvd:        0\nHugePages_Surp:        0\nHugepagesize:       2048 kB\nHugetlb:               0 kB\nDirectMap4k:       60416 kB\nDirectMap2M:    11397120 kB\nDirectMap1G:    14680064 kB",
+  "cgroup": {
+    "memory.max": "4294967296",
+    "memory.swap.max": "0",
+    "cpu.max": "1600000 100000"
+  },
+  "source_sha256": {
+    "/app/.venv/lib/python3.12/site-packages/ad_aggregator/polars_engine.py": "06d437a6039805dd9de60d473cae1778a0801cf8d13314b71778a3dbdb5f1470",
+    "/app/.venv/lib/python3.12/site-packages/ad_aggregator/cli.py": "4c0a0591c99eed63273556362a282b3bf32d17f575007b38b0e36c5d8b7c4ecf",
+    "/app/.venv/lib/python3.12/site-packages/ad_aggregator/__init__.py": "3f13366a2a7e7c8c2bb038fb2bf21c294cdc0e3e080efe4523715a2d37795d6d",
+    "/app/.venv/lib/python3.12/site-packages/ad_aggregator/multiprocessing_engine.py": "6142401cd748dbfa500e6065524d6b24b57b8e3a46536af6df656cac13eb64af",
+    "/app/.venv/lib/python3.12/site-packages/ad_aggregator/polars_baseline.py": "9a21bce0e1d00824a5682bc189a5b5f3045e1cce23cfdedcd86e94e8ee3722ad",
+    "/app/.venv/lib/python3.12/site-packages/ad_aggregator/polars_experimental.py": "be8916f8c996dfbeef0c36dbbeba656c28606429cce6f5b293f1212f12a1366c",
+    "/app/.venv/lib/python3.12/site-packages/ad_aggregator/__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d",
+    "/app/.venv/lib/python3.12/site-packages/ad_aggregator/python_engine.py": "0c9a78417dc1f4eed57248a00374e697d26ac75bb7861d216e1e6080e332f4b3",
+    "/app/.venv/lib/python3.12/site-packages/ad_aggregator/core.py": "d69d7cc94bfdd7ba40d54fe8aced2a97c3ef33080a23028d910b13fd06efb54a",
+    "/app/.venv/lib/python3.12/site-packages/ad_aggregator/optimized_engine.py": "bffa6bbd2f19927bfd9b5f292b9a3444ed15b4fea07fdf9f0b9ce3fe23c64dc8",
+    "/repo/scripts/benchmark_linux.py": "79bfacab4f0d40cadeab3d51b0df447079bbeffceb44ae76c9e0e36bf740648e",
+    "/repo/scripts/generate_scalability.py": "01860bff2dd76968dc3cd0c0e5e84ecd52b3b93a906f9b295e5b3dc80eec16eb"
+  },
+  "conditions": "Fresh sequential subprocesses; engine order reversed on alternate repetitions. Warm Linux page cache (input SHA256 read before timing). OS cache not flushed; background load uncontrolled. Elapsed includes startup, imports, validation, aggregation, ranking, CSVs, complete aggregate JSON export and hashes. RSS is Linux getrusage(RUSAGE_SELF).ru_maxrss * 1024, per worker. Controller, Docker/VM overhead and page cache outside process RSS are excluded. Exact aggregate-oracle comparison occurs in controller after timing.",
+  "datasets": [
+    {
+      "input": "/study/data/original.csv",
+      "expected": {
+        "input_bytes": 1043304870,
+        "input_sha256": "4e9c87cc0b408f043917f5f7ee0101ba09899ad79f154358e9a2da374cfd60eb",
+        "campaigns": 50,
+        "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+        "output_sha256": {
+          "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+          "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+        }
+      },
+      "runs": [
+        {
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "campaigns": 50,
+          "aggregate_seconds": 2.248458275000303,
+          "rank_and_write_seconds": 0.0016486089989484753,
+          "identity_seconds": 0.0002518300007068319,
+          "peak_rss_bytes": 2498007040,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "baseline",
+          "repetition": 1,
+          "seconds": 2.814700385000833,
+          "mib_per_second": 353.4916412427559,
+          "exact_oracle_compared": false
+        },
+        {
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "campaigns": 50,
+          "aggregate_seconds": 4.558130170998993,
+          "rank_and_write_seconds": 0.0013553940007113852,
+          "identity_seconds": 0.0002954760002467083,
+          "peak_rss_bytes": 601907200,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "optimized",
+          "repetition": 1,
+          "seconds": 4.826663452000503,
+          "mib_per_second": 206.14096437326202,
+          "exact_oracle_compared": false
+        },
+        {
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "campaigns": 50,
+          "aggregate_seconds": 5.842524575000425,
+          "rank_and_write_seconds": 0.002492548999725841,
+          "identity_seconds": 0.000770755999838002,
+          "peak_rss_bytes": 579563520,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "optimized",
+          "repetition": 2,
+          "seconds": 6.119145118000233,
+          "mib_per_second": 162.60001021608778,
+          "exact_oracle_compared": false
+        },
+        {
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "campaigns": 50,
+          "aggregate_seconds": 3.365138739000031,
+          "rank_and_write_seconds": 0.0016944250000960892,
+          "identity_seconds": 0.0004767050013469998,
+          "peak_rss_bytes": 2419470336,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "baseline",
+          "repetition": 2,
+          "seconds": 3.7633016359995963,
+          "mib_per_second": 264.38833634346184,
+          "exact_oracle_compared": false
+        },
+        {
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "campaigns": 50,
+          "aggregate_seconds": 3.1098407350000343,
+          "rank_and_write_seconds": 0.001914308999403147,
+          "identity_seconds": 0.0005882229997951072,
+          "peak_rss_bytes": 2501136384,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "baseline",
+          "repetition": 3,
+          "seconds": 3.4412584290002997,
+          "mib_per_second": 289.1305838340091,
+          "exact_oracle_compared": false
+        },
+        {
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "campaigns": 50,
+          "aggregate_seconds": 5.284533132000433,
+          "rank_and_write_seconds": 0.0017471359988121549,
+          "identity_seconds": 0.0004198420010652626,
+          "peak_rss_bytes": 573657088,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "optimized",
+          "repetition": 3,
+          "seconds": 5.578381529998296,
+          "mib_per_second": 178.36231769913834,
+          "exact_oracle_compared": false
+        }
+      ]
+    },
+    {
+      "input": "/study/data/synthetic-v1/campaigns-1000.csv",
+      "expected": {
+        "generator_version": 1,
+        "seed": 20261106,
+        "campaigns": 1000,
+        "rows": 17683133,
+        "row_bytes": 59,
+        "rows_per_campaign_min": 17683,
+        "rows_per_campaign_max": 17684,
+        "target_bytes": 1043304870,
+        "input_bytes": 1043304901,
+        "input_sha256": "ff2a4b70ed1f58bfa6a7ea59b66a04bc5be85499899f61f20095e1adc45d908d",
+        "cycle_sha256": "05d63ace739e7ad50aee1109331eb392453d38aad336318f497c5c1b770ccb46",
+        "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+        "output_sha256": {
+          "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+          "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+        },
+        "distribution": "uniform interleaved; seeded shuffled cycle repeated; last partial cycle follows same order; duplicate records additive"
+      },
+      "runs": [
+        {
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "campaigns": 1000,
+          "aggregate_seconds": 2.1067210450000857,
+          "rank_and_write_seconds": 0.017808049999075592,
+          "identity_seconds": 0.001690902001428185,
+          "peak_rss_bytes": 2145837056,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "baseline",
+          "repetition": 1,
+          "seconds": 2.429545318998862,
+          "mib_per_second": 409.5305736772434,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "campaigns": 1000,
+          "aggregate_seconds": 4.535437237000224,
+          "rank_and_write_seconds": 0.01542197200069495,
+          "identity_seconds": 0.0012136149998696055,
+          "peak_rss_bytes": 497729536,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "optimized",
+          "repetition": 1,
+          "seconds": 4.845520420998582,
+          "mib_per_second": 205.33874626812897,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "campaigns": 1000,
+          "aggregate_seconds": 4.132519159998992,
+          "rank_and_write_seconds": 0.016733561000364716,
+          "identity_seconds": 0.001453352000680752,
+          "peak_rss_bytes": 495087616,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "optimized",
+          "repetition": 2,
+          "seconds": 4.432284511000034,
+          "mib_per_second": 224.48312733425465,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "campaigns": 1000,
+          "aggregate_seconds": 2.130402126000263,
+          "rank_and_write_seconds": 0.019861402999595157,
+          "identity_seconds": 0.0036617610003304435,
+          "peak_rss_bytes": 2095263744,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "baseline",
+          "repetition": 2,
+          "seconds": 2.5490746190007485,
+          "mib_per_second": 390.32717239736996,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "campaigns": 1000,
+          "aggregate_seconds": 2.0057767760008574,
+          "rank_and_write_seconds": 0.020385185000122874,
+          "identity_seconds": 0.0017130169999290956,
+          "peak_rss_bytes": 2089574400,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "baseline",
+          "repetition": 3,
+          "seconds": 2.4147595889990043,
+          "mib_per_second": 412.03815601242263,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "campaigns": 1000,
+          "aggregate_seconds": 4.211153059000935,
+          "rank_and_write_seconds": 0.015088537998963147,
+          "identity_seconds": 0.0012630820001504617,
+          "peak_rss_bytes": 493760512,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "optimized",
+          "repetition": 3,
+          "seconds": 4.5243688490008935,
+          "mib_per_second": 219.91422924861288,
+          "exact_oracle_compared": true
+        }
+      ]
+    },
+    {
+      "input": "/study/data/synthetic-v1/campaigns-10000.csv",
+      "expected": {
+        "generator_version": 1,
+        "seed": 20261106,
+        "campaigns": 10000,
+        "rows": 17683133,
+        "row_bytes": 59,
+        "rows_per_campaign_min": 1768,
+        "rows_per_campaign_max": 1769,
+        "target_bytes": 1043304870,
+        "input_bytes": 1043304901,
+        "input_sha256": "63c1edc19061b4bcbcdfdbbe68531c1fdc3fd4c4b61f5cd8913737fb67fe8fe4",
+        "cycle_sha256": "7b2561d0708c0ba04a7288917f7bb13a780a29979738ccb89a0dad7e97e34230",
+        "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+        "output_sha256": {
+          "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+          "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+        },
+        "distribution": "uniform interleaved; seeded shuffled cycle repeated; last partial cycle follows same order; duplicate records additive"
+      },
+      "runs": [
+        {
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "campaigns": 10000,
+          "aggregate_seconds": 2.241140150999854,
+          "rank_and_write_seconds": 0.18686048400013533,
+          "identity_seconds": 0.016372144000342814,
+          "peak_rss_bytes": 2930171904,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "baseline",
+          "repetition": 1,
+          "seconds": 2.7772434750004322,
+          "mib_per_second": 358.2592225783555,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "campaigns": 10000,
+          "aggregate_seconds": 5.005238772000666,
+          "rank_and_write_seconds": 0.20973349300038535,
+          "identity_seconds": 0.013821056998494896,
+          "peak_rss_bytes": 506155008,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "optimized",
+          "repetition": 1,
+          "seconds": 5.499999611998646,
+          "mib_per_second": 180.9042106282807,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "campaigns": 10000,
+          "aggregate_seconds": 4.877136602999599,
+          "rank_and_write_seconds": 0.21377881500120566,
+          "identity_seconds": 0.011659287998554646,
+          "peak_rss_bytes": 504070144,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "optimized",
+          "repetition": 2,
+          "seconds": 5.386677166998197,
+          "mib_per_second": 184.70999048545698,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "campaigns": 10000,
+          "aggregate_seconds": 2.444159144999503,
+          "rank_and_write_seconds": 0.24485405199993693,
+          "identity_seconds": 0.029194921000453178,
+          "peak_rss_bytes": 2864087040,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "baseline",
+          "repetition": 2,
+          "seconds": 3.067031861999567,
+          "mib_per_second": 324.40911377287995,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "campaigns": 10000,
+          "aggregate_seconds": 2.3702688659996056,
+          "rank_and_write_seconds": 0.19733526799973333,
+          "identity_seconds": 0.015418000000863685,
+          "peak_rss_bytes": 2916782080,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "baseline",
+          "repetition": 3,
+          "seconds": 2.9257494529992982,
+          "mib_per_second": 340.07460455798093,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "campaigns": 10000,
+          "aggregate_seconds": 5.111766988000454,
+          "rank_and_write_seconds": 0.3490194789992529,
+          "identity_seconds": 0.012720434000584646,
+          "peak_rss_bytes": 495382528,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "optimized",
+          "repetition": 3,
+          "seconds": 5.7676952429992525,
+          "mib_per_second": 172.50791630715054,
+          "exact_oracle_compared": true
+        }
+      ]
+    },
+    {
+      "input": "/study/data/synthetic-v1/campaigns-100000.csv",
+      "expected": {
+        "generator_version": 1,
+        "seed": 20261106,
+        "campaigns": 100000,
+        "rows": 17683133,
+        "row_bytes": 59,
+        "rows_per_campaign_min": 176,
+        "rows_per_campaign_max": 177,
+        "target_bytes": 1043304870,
+        "input_bytes": 1043304901,
+        "input_sha256": "0ab9c2b255468fccb30e5018ab5ad1789bb432eb62b78f39157b2f501cb92600",
+        "cycle_sha256": "1d05db46fa723b94069932ed154ba9db92ee5562dfff8add32ad8c01f785be4e",
+        "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+        "output_sha256": {
+          "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+          "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+        },
+        "distribution": "uniform interleaved; seeded shuffled cycle repeated; last partial cycle follows same order; duplicate records additive"
+      },
+      "runs": [
+        {
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "campaigns": 100000,
+          "aggregate_seconds": 2.727982386999429,
+          "rank_and_write_seconds": 2.43193723100012,
+          "identity_seconds": 0.1522470820000308,
+          "peak_rss_bytes": 3385700352,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "baseline",
+          "repetition": 1,
+          "seconds": 5.656597293000232,
+          "mib_per_second": 175.89604434024267,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "campaigns": 100000,
+          "aggregate_seconds": 11.773590826000145,
+          "rank_and_write_seconds": 2.487115163999988,
+          "identity_seconds": 0.1767900719987665,
+          "peak_rss_bytes": 599773184,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "optimized",
+          "repetition": 1,
+          "seconds": 14.748248497000532,
+          "mib_per_second": 67.46381364992737,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "campaigns": 100000,
+          "aggregate_seconds": 11.82622012200045,
+          "rank_and_write_seconds": 2.4389374689999386,
+          "identity_seconds": 0.18801545200039982,
+          "peak_rss_bytes": 599977984,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "optimized",
+          "repetition": 2,
+          "seconds": 14.751846260998718,
+          "mib_per_second": 67.44736019212719,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "campaigns": 100000,
+          "aggregate_seconds": 2.612234924999939,
+          "rank_and_write_seconds": 2.406564672000968,
+          "identity_seconds": 0.17590093400031037,
+          "peak_rss_bytes": 3415474176,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "baseline",
+          "repetition": 2,
+          "seconds": 5.53588883699922,
+          "mib_per_second": 179.73140674620188,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "campaigns": 100000,
+          "aggregate_seconds": 2.514050510000743,
+          "rank_and_write_seconds": 2.3630411260000983,
+          "identity_seconds": 0.1479576170004293,
+          "peak_rss_bytes": 3427119104,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "baseline",
+          "repetition": 3,
+          "seconds": 5.370595083999433,
+          "mib_per_second": 185.26309891221925,
+          "exact_oracle_compared": true
+        },
+        {
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "campaigns": 100000,
+          "aggregate_seconds": 11.456265501999951,
+          "rank_and_write_seconds": 2.4435869499993714,
+          "identity_seconds": 0.18796595300045738,
+          "peak_rss_bytes": 607793152,
+          "polars": "1.35.2",
+          "actual_threads": 16,
+          "engine": "optimized",
+          "repetition": 3,
+          "seconds": 14.400774153000384,
+          "mib_per_second": 69.09163894200535,
+          "exact_oracle_compared": true
+        }
+      ]
+    }
+  ],
+  "finished_utc": "2026-11-05T17:44:10.493170+00:00"
+}

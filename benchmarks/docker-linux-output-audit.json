@@ -1,0 +1,40 @@
+{
+  "complete": true,
+  "command": [
+    "/tools/audit_linux_outputs.py",
+    "--study",
+    "/reports/docker-linux-scalability.json",
+    "--report",
+    "/reports/docker-linux-output-audit.json"
+  ],
+  "checks": [
+    {
+      "input": "/study/data/original.csv",
+      "campaigns": 50,
+      "exact_engine_aggregate_comparison": true,
+      "exact_analytical_oracle_comparison": false,
+      "independent_decimal_csv_bytes": true
+    },
+    {
+      "input": "/study/data/synthetic-v1/campaigns-1000.csv",
+      "campaigns": 1000,
+      "exact_engine_aggregate_comparison": true,
+      "exact_analytical_oracle_comparison": true,
+      "independent_decimal_csv_bytes": true
+    },
+    {
+      "input": "/study/data/synthetic-v1/campaigns-10000.csv",
+      "campaigns": 10000,
+      "exact_engine_aggregate_comparison": true,
+      "exact_analytical_oracle_comparison": true,
+      "independent_decimal_csv_bytes": true
+    },
+    {
+      "input": "/study/data/synthetic-v1/campaigns-100000.csv",
+      "campaigns": 100000,
+      "exact_engine_aggregate_comparison": true,
+      "exact_analytical_oracle_comparison": true,
+      "independent_decimal_csv_bytes": true
+    }
+  ]
+}

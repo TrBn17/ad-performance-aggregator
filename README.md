@@ -71,6 +71,15 @@ The final comparison is in
 Earlier Python and Polars measurements remain in
 [review-results.json](benchmarks/review-results.json).
 
+Docker/Linux validation also passed on the original input and reproducible
+~1 GB inputs with 1K, 10K and 100K campaigns. At 100K campaigns, the optimized
+engine used **579.6 MiB** peak RSS versus **3,268.4 MiB** for the baseline, with
+median runtimes of **14.748 s** and **5.536 s** respectively. Its memory advantage
+persists, while the sub-10-second target no longer holds at 100K. Both engines
+produced identical aggregates and CSVs. See
+[Docker/Linux scalability validation](benchmarks/docker-linux-scalability.md)
+for all results, independent oracles, 1 GB container-limit checks and commands.
+
 ## Verification
 
 ```sh
@@ -82,7 +91,7 @@ uv run --no-sync python scripts/verify_outputs.py --outputs results
 uv run --no-sync python scripts/benchmark.py --engines polars-baseline polars --repeats 3 --polars-threads 16 --report benchmarks/polars-memory-final.json
 ```
 
-The suite has 330 tests covering reference calculations, ranking ties, invalid
+The suite has 340 tests covering reference calculations, ranking ties, invalid
 input, precision, CLI entry points, output preservation and chunk boundaries.
 Full-data CSVs also
 passed an independent Decimal ranking/formatting audit. Polars is the only runtime
@@ -100,8 +109,11 @@ docker run --rm -v "${PWD}/data:/data:ro" -v "${PWD}/results:/results" ad-aggreg
 
 The image excludes the dataset and installs locked runtime dependencies. Earlier
 build, both-engine smoke tests, and full-data Polars execution passed during
-review; container outputs matched host outputs. Docker was not rerun for the
-memory optimization. Docker timings are excluded from the Windows benchmark.
+review; container outputs matched host outputs. The latest optimized production
+image passed all 340 Linux tests and original/100K CLI runs under a 1 GB container
+limit, with swap disabled. Separate Linux timings and memory measurements are in
+[docker-linux-scalability.md](benchmarks/docker-linux-scalability.md) and are
+excluded from the earlier Windows benchmark.
 Earlier review evidence is in
 [review-verification.json](benchmarks/review-verification.json).
 
