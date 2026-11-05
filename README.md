@@ -6,8 +6,9 @@ for the challenge specification.
 
 ## Setup and usage
 
-Install [uv](https://docs.astral.sh/uv/) and place the extracted dataset at
-`data/ad_data.csv`. The dataset is excluded from Git.
+Install [uv](https://docs.astral.sh/uv/), download the
+[dataset archive](https://github.com/flinters-vietnam/recruitment/blob/main/fv-sec-001-software-engineer-challenge/ad_data.csv.zip),
+and extract it to `data/ad_data.csv`. The dataset is excluded from Git.
 
 ```sh
 uv sync --frozen --extra dev --python 3.12
