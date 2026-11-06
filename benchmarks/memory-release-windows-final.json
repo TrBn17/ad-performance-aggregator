@@ -1,0 +1,1047 @@
+{
+  "command": [
+    "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+    "scripts/study_memory.py",
+    "--input",
+    "data/ad_data.csv",
+    "benchmark-output/memory-study-data/campaigns-1000.csv",
+    "benchmark-output/memory-study-data/campaigns-10000.csv",
+    "benchmark-output/memory-study-data/campaigns-100000.csv",
+    "--config",
+    "current",
+    "released",
+    "released16",
+    "--report",
+    "benchmarks/memory-release-windows-final.json"
+  ],
+  "started_utc": "2026-11-06T01:42:56.461172+00:00",
+  "complete": true,
+  "profile": false,
+  "python": "3.12.13 (main, Mar  3 2026, 15:01:35) [MSC v.1944 64 bit (AMD64)]",
+  "polars": "1.35.2",
+  "psutil": "7.1.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "physical_cpus": 14,
+  "logical_cpus": 20,
+  "ram_bytes": 16959062016,
+  "environment": {
+    "POLARS_MAX_THREADS": "16"
+  },
+  "source_sha256": {
+    "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py": "a31f00f5a96387df66d880840a40964d58f15e43c83ec5eaad68187eba24bcba",
+    "src\\ad_aggregator\\cli.py": "168b0ea1a752ec39995e13b0e536cecb613ac3d206698c12197362b74f2af6dd",
+    "src\\ad_aggregator\\core.py": "d69d7cc94bfdd7ba40d54fe8aced2a97c3ef33080a23028d910b13fd06efb54a",
+    "src\\ad_aggregator\\multiprocessing_engine.py": "6142401cd748dbfa500e6065524d6b24b57b8e3a46536af6df656cac13eb64af",
+    "src\\ad_aggregator\\optimized_engine.py": "bffa6bbd2f19927bfd9b5f292b9a3444ed15b4fea07fdf9f0b9ce3fe23c64dc8",
+    "src\\ad_aggregator\\polars_baseline.py": "9a21bce0e1d00824a5682bc189a5b5f3045e1cce23cfdedcd86e94e8ee3722ad",
+    "src\\ad_aggregator\\polars_engine.py": "6ee7f2e6ba3c28db163d9447619beea00c83a48971de163b77433a1f4052a805",
+    "src\\ad_aggregator\\polars_experimental.py": "be8916f8c996dfbeef0c36dbbeba656c28606429cce6f5b293f1212f12a1366c",
+    "src\\ad_aggregator\\python_engine.py": "0c9a78417dc1f4eed57248a00374e697d26ac75bb7861d216e1e6080e332f4b3",
+    "src\\ad_aggregator\\__init__.py": "3f13366a2a7e7c8c2bb038fb2bf21c294cdc0e3e080efe4523715a2d37795d6d",
+    "src\\ad_aggregator\\__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+  },
+  "conditions": "Fresh sequential subprocesses, reverse order each repetition; warm cache from input hashing; background load uncontrolled. Wall includes startup/imports, full pipeline and aggregate/CSV hashes. OS peak RSS includes native allocations; simultaneous process-tree RSS sampled every 10 ms also includes workers (shared pages can count twice, short peaks can be missed). No workers spawned by this engine. Profiling uses only three batches with tracemalloc and GC; profile timings are not performance evidence. Analytical oracle read/compare included for synthetic inputs.",
+  "datasets": [
+    {
+      "input": "data\\ad_data.csv",
+      "input_bytes": 1043304870,
+      "input_sha256": "4e9c87cc0b408f043917f5f7ee0101ba09899ad79f154358e9a2da374cfd60eb",
+      "runs": [
+        {
+          "campaigns": 50,
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "oracle_compared": false,
+          "aggregate_seconds": 3.786010199924931,
+          "rank_write_seconds": 0.003600900061428547,
+          "parent_os_peak_rss_bytes": 549003264,
+          "configuration": "current",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "data\\ad_data.csv",
+            "--output",
+            "benchmark-output\\memory-study\\ad_data\\current"
+          ],
+          "seconds": 4.079622399993241,
+          "mib_per_second": 243.8885174035249,
+          "sampled_tree_peak_rss_bytes": 537661440
+        },
+        {
+          "campaigns": 50,
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "oracle_compared": false,
+          "aggregate_seconds": 4.134696000022814,
+          "rank_write_seconds": 0.0032823998481035233,
+          "parent_os_peak_rss_bytes": 527220736,
+          "configuration": "released",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "data\\ad_data.csv",
+            "--output",
+            "benchmark-output\\memory-study\\ad_data\\released"
+          ],
+          "seconds": 4.437788099981844,
+          "mib_per_second": 224.2047245799393,
+          "sampled_tree_peak_rss_bytes": 516808704
+        },
+        {
+          "campaigns": 50,
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "oracle_compared": false,
+          "aggregate_seconds": 4.1097096998710185,
+          "rank_write_seconds": 0.003451599972322583,
+          "parent_os_peak_rss_bytes": 311783424,
+          "configuration": "released16",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released16",
+            "--input",
+            "data\\ad_data.csv",
+            "--output",
+            "benchmark-output\\memory-study\\ad_data\\released16"
+          ],
+          "seconds": 4.391684800153598,
+          "mib_per_second": 226.55839477955308,
+          "sampled_tree_peak_rss_bytes": 304869376
+        },
+        {
+          "campaigns": 50,
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "oracle_compared": false,
+          "aggregate_seconds": 4.414596700109541,
+          "rank_write_seconds": 0.0039768998976796865,
+          "parent_os_peak_rss_bytes": 317014016,
+          "configuration": "released16",
+          "repetition": 2,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released16",
+            "--input",
+            "data\\ad_data.csv",
+            "--output",
+            "benchmark-output\\memory-study\\ad_data\\released16"
+          ],
+          "seconds": 4.702719300054014,
+          "mib_per_second": 211.57398416042685,
+          "sampled_tree_peak_rss_bytes": 305373184
+        },
+        {
+          "campaigns": 50,
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "oracle_compared": false,
+          "aggregate_seconds": 4.5853424000088125,
+          "rank_write_seconds": 0.003793500130996108,
+          "parent_os_peak_rss_bytes": 520855552,
+          "configuration": "released",
+          "repetition": 2,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "data\\ad_data.csv",
+            "--output",
+            "benchmark-output\\memory-study\\ad_data\\released"
+          ],
+          "seconds": 4.983208599966019,
+          "mib_per_second": 199.66514319857015,
+          "sampled_tree_peak_rss_bytes": 509464576
+        },
+        {
+          "campaigns": 50,
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "oracle_compared": false,
+          "aggregate_seconds": 4.170324500184506,
+          "rank_write_seconds": 0.005830399924889207,
+          "parent_os_peak_rss_bytes": 560254976,
+          "configuration": "current",
+          "repetition": 2,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "data\\ad_data.csv",
+            "--output",
+            "benchmark-output\\memory-study\\ad_data\\current"
+          ],
+          "seconds": 4.491835700115189,
+          "mib_per_second": 221.5070018422638,
+          "sampled_tree_peak_rss_bytes": 557531136
+        },
+        {
+          "campaigns": 50,
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "oracle_compared": false,
+          "aggregate_seconds": 4.229668100131676,
+          "rank_write_seconds": 0.005286599975079298,
+          "parent_os_peak_rss_bytes": 552243200,
+          "configuration": "current",
+          "repetition": 3,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "data\\ad_data.csv",
+            "--output",
+            "benchmark-output\\memory-study\\ad_data\\current"
+          ],
+          "seconds": 4.5764879998750985,
+          "mib_per_second": 217.40973836874832,
+          "sampled_tree_peak_rss_bytes": 551284736
+        },
+        {
+          "campaigns": 50,
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "oracle_compared": false,
+          "aggregate_seconds": 3.697321900166571,
+          "rank_write_seconds": 0.0033189000096172094,
+          "parent_os_peak_rss_bytes": 530333696,
+          "configuration": "released",
+          "repetition": 3,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "data\\ad_data.csv",
+            "--output",
+            "benchmark-output\\memory-study\\ad_data\\released"
+          ],
+          "seconds": 4.033657899824902,
+          "mib_per_second": 246.66768561204768,
+          "sampled_tree_peak_rss_bytes": 497020928
+        },
+        {
+          "campaigns": 50,
+          "aggregate_sha256": "3c979d5a88ec65718218625eeef3176d2770807bb9080aa65e6d02fb194774e0",
+          "output_sha256": {
+            "top10_ctr.csv": "c8a50e2870b1bf0386818252a8c54a0bdc109469eb0c7ad791f749bd49cd3052",
+            "top10_cpa.csv": "0bb724eb8ca9237e188e5eb46b5c63ddf24804c1a353668eaf94c81c86c9cedc"
+          },
+          "oracle_compared": false,
+          "aggregate_seconds": 4.3075657999143,
+          "rank_write_seconds": 0.0025547000113874674,
+          "parent_os_peak_rss_bytes": 316002304,
+          "configuration": "released16",
+          "repetition": 3,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released16",
+            "--input",
+            "data\\ad_data.csv",
+            "--output",
+            "benchmark-output\\memory-study\\ad_data\\released16"
+          ],
+          "seconds": 4.570314699783921,
+          "mib_per_second": 217.70340207592326,
+          "sampled_tree_peak_rss_bytes": 292581376
+        }
+      ]
+    },
+    {
+      "input": "benchmark-output\\memory-study-data\\campaigns-1000.csv",
+      "input_bytes": 1043304901,
+      "input_sha256": "ff2a4b70ed1f58bfa6a7ea59b66a04bc5be85499899f61f20095e1adc45d908d",
+      "runs": [
+        {
+          "campaigns": 1000,
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.7287248999346048,
+          "rank_write_seconds": 0.010193200083449483,
+          "parent_os_peak_rss_bytes": 482086912,
+          "configuration": "current",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-1000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-1000\\current"
+          ],
+          "seconds": 4.038687699940056,
+          "mib_per_second": 246.36049186948355,
+          "sampled_tree_peak_rss_bytes": 465391616
+        },
+        {
+          "campaigns": 1000,
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.6008466000203043,
+          "rank_write_seconds": 0.010666199959814548,
+          "parent_os_peak_rss_bytes": 435793920,
+          "configuration": "released",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-1000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-1000\\released"
+          ],
+          "seconds": 3.883263000054285,
+          "mib_per_second": 256.2208864685592,
+          "sampled_tree_peak_rss_bytes": 419037184
+        },
+        {
+          "campaigns": 1000,
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.6647665998898447,
+          "rank_write_seconds": 0.009859400102868676,
+          "parent_os_peak_rss_bytes": 248397824,
+          "configuration": "released16",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released16",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-1000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-1000\\released16"
+          ],
+          "seconds": 3.953072699951008,
+          "mib_per_second": 251.696126984155,
+          "sampled_tree_peak_rss_bytes": 248307712
+        },
+        {
+          "campaigns": 1000,
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.3845393999945372,
+          "rank_write_seconds": 0.01555059989914298,
+          "parent_os_peak_rss_bytes": 251293696,
+          "configuration": "released16",
+          "repetition": 2,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released16",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-1000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-1000\\released16"
+          ],
+          "seconds": 3.7288182000629604,
+          "mib_per_second": 266.83335976199254,
+          "sampled_tree_peak_rss_bytes": 241594368
+        },
+        {
+          "campaigns": 1000,
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.356457700021565,
+          "rank_write_seconds": 0.009664099896326661,
+          "parent_os_peak_rss_bytes": 440676352,
+          "configuration": "released",
+          "repetition": 2,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-1000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-1000\\released"
+          ],
+          "seconds": 3.637144000036642,
+          "mib_per_second": 273.5588935314196,
+          "sampled_tree_peak_rss_bytes": 428859392
+        },
+        {
+          "campaigns": 1000,
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.342630400089547,
+          "rank_write_seconds": 0.010214000009000301,
+          "parent_os_peak_rss_bytes": 473251840,
+          "configuration": "current",
+          "repetition": 2,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-1000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-1000\\current"
+          ],
+          "seconds": 3.609593299916014,
+          "mib_per_second": 275.6468681077217,
+          "sampled_tree_peak_rss_bytes": 453894144
+        },
+        {
+          "campaigns": 1000,
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.338868699967861,
+          "rank_write_seconds": 0.009407100034877658,
+          "parent_os_peak_rss_bytes": 461676544,
+          "configuration": "current",
+          "repetition": 3,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-1000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-1000\\current"
+          ],
+          "seconds": 3.627000499982387,
+          "mib_per_second": 274.3239457147296,
+          "sampled_tree_peak_rss_bytes": 444674048
+        },
+        {
+          "campaigns": 1000,
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.3741341000422835,
+          "rank_write_seconds": 0.009878400014713407,
+          "parent_os_peak_rss_bytes": 436973568,
+          "configuration": "released",
+          "repetition": 3,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-1000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-1000\\released"
+          ],
+          "seconds": 3.6595606999471784,
+          "mib_per_second": 271.88320398096596,
+          "sampled_tree_peak_rss_bytes": 426889216
+        },
+        {
+          "campaigns": 1000,
+          "aggregate_sha256": "5a2a86c410ad1eb022f58646363f26409e49be626675331133247272eb82ccc7",
+          "output_sha256": {
+            "top10_ctr.csv": "0af045b31cb7372b2e5d7fc1af51613f3d85ce6d875949310b8888f43012bb25",
+            "top10_cpa.csv": "e059a5d1f72a266e5152c0d28a10f5911009f1584963a346e9ab17550eb6fe6f"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.45397559995763,
+          "rank_write_seconds": 0.009385099867358804,
+          "parent_os_peak_rss_bytes": 252866560,
+          "configuration": "released16",
+          "repetition": 3,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released16",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-1000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-1000\\released16"
+          ],
+          "seconds": 3.7183109000325203,
+          "mib_per_second": 267.58738443731625,
+          "sampled_tree_peak_rss_bytes": 236814336
+        }
+      ]
+    },
+    {
+      "input": "benchmark-output\\memory-study-data\\campaigns-10000.csv",
+      "input_bytes": 1043304901,
+      "input_sha256": "63c1edc19061b4bcbcdfdbbe68531c1fdc3fd4c4b61f5cd8913737fb67fe8fe4",
+      "runs": [
+        {
+          "campaigns": 10000,
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 4.315166799817234,
+          "rank_write_seconds": 0.10871430020779371,
+          "parent_os_peak_rss_bytes": 475348992,
+          "configuration": "current",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-10000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-10000\\current"
+          ],
+          "seconds": 4.817028499906883,
+          "mib_per_second": 206.55329074422104,
+          "sampled_tree_peak_rss_bytes": 479731712
+        },
+        {
+          "campaigns": 10000,
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.9987276000902057,
+          "rank_write_seconds": 0.11732230009511113,
+          "parent_os_peak_rss_bytes": 448249856,
+          "configuration": "released",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-10000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-10000\\released"
+          ],
+          "seconds": 4.408746400149539,
+          "mib_per_second": 225.68163327124398,
+          "sampled_tree_peak_rss_bytes": 442814464
+        },
+        {
+          "campaigns": 10000,
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 4.761394399916753,
+          "rank_write_seconds": 0.11070699989795685,
+          "parent_os_peak_rss_bytes": 273186816,
+          "configuration": "released16",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released16",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-10000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-10000\\released16"
+          ],
+          "seconds": 5.159434400033206,
+          "mib_per_second": 192.84538015602286,
+          "sampled_tree_peak_rss_bytes": 263618560
+        },
+        {
+          "campaigns": 10000,
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 4.113915299996734,
+          "rank_write_seconds": 0.10866690007969737,
+          "parent_os_peak_rss_bytes": 275496960,
+          "configuration": "released16",
+          "repetition": 2,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released16",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-10000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-10000\\released16"
+          ],
+          "seconds": 4.485031199874356,
+          "mib_per_second": 221.8430695180757,
+          "sampled_tree_peak_rss_bytes": 277938176
+        },
+        {
+          "campaigns": 10000,
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.906213799957186,
+          "rank_write_seconds": 0.1126684001646936,
+          "parent_os_peak_rss_bytes": 469684224,
+          "configuration": "released",
+          "repetition": 2,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-10000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-10000\\released"
+          ],
+          "seconds": 4.301373099908233,
+          "mib_per_second": 231.31522543015217,
+          "sampled_tree_peak_rss_bytes": 447406080
+        },
+        {
+          "campaigns": 10000,
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.5274116001091897,
+          "rank_write_seconds": 0.10658829985186458,
+          "parent_os_peak_rss_bytes": 484196352,
+          "configuration": "current",
+          "repetition": 2,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-10000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-10000\\current"
+          ],
+          "seconds": 3.9226238999981433,
+          "mib_per_second": 253.6498817194624,
+          "sampled_tree_peak_rss_bytes": 479510528
+        },
+        {
+          "campaigns": 10000,
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.9276123999152333,
+          "rank_write_seconds": 0.11258910014294088,
+          "parent_os_peak_rss_bytes": 489861120,
+          "configuration": "current",
+          "repetition": 3,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-10000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-10000\\current"
+          ],
+          "seconds": 4.320003699976951,
+          "mib_per_second": 230.3176472440924,
+          "sampled_tree_peak_rss_bytes": 491814912
+        },
+        {
+          "campaigns": 10000,
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 3.5526302999351174,
+          "rank_write_seconds": 0.10768430004827678,
+          "parent_os_peak_rss_bytes": 451985408,
+          "configuration": "released",
+          "repetition": 3,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-10000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-10000\\released"
+          ],
+          "seconds": 3.9487676999997348,
+          "mib_per_second": 251.97052950583347,
+          "sampled_tree_peak_rss_bytes": 452173824
+        },
+        {
+          "campaigns": 10000,
+          "aggregate_sha256": "3a28450f469db1316b41ddb8f117ea2b47658ee1ce69c013024e8cdb60e957c6",
+          "output_sha256": {
+            "top10_ctr.csv": "3786031737b9c1d8a7dfb10a26a10160b7e963e54755e12f2bceac6abe7240d6",
+            "top10_cpa.csv": "f44b34d2b33f4a7857c9cdba367def615a86f101599a9a0f5c5b64b2454adf80"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 4.074213800020516,
+          "rank_write_seconds": 0.10824529989622533,
+          "parent_os_peak_rss_bytes": 272916480,
+          "configuration": "released16",
+          "repetition": 3,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released16",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-10000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-10000\\released16"
+          ],
+          "seconds": 4.478823299985379,
+          "mib_per_second": 222.15055643470316,
+          "sampled_tree_peak_rss_bytes": 266858496
+        }
+      ]
+    },
+    {
+      "input": "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+      "input_bytes": 1043304901,
+      "input_sha256": "0ab9c2b255468fccb30e5018ab5ad1789bb432eb62b78f39157b2f501cb92600",
+      "runs": [
+        {
+          "campaigns": 100000,
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 8.930245500057936,
+          "rank_write_seconds": 1.5796635998412967,
+          "parent_os_peak_rss_bytes": 610328576,
+          "configuration": "current",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-100000\\current"
+          ],
+          "seconds": 10.940831799991429,
+          "mib_per_second": 90.9412653858041,
+          "sampled_tree_peak_rss_bytes": 598372352
+        },
+        {
+          "campaigns": 100000,
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 8.87536279996857,
+          "rank_write_seconds": 1.4076968000736088,
+          "parent_os_peak_rss_bytes": 557932544,
+          "configuration": "released",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-100000\\released"
+          ],
+          "seconds": 10.75607639993541,
+          "mib_per_second": 92.50334892288792,
+          "sampled_tree_peak_rss_bytes": 540114944
+        },
+        {
+          "campaigns": 100000,
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 14.93154380004853,
+          "rank_write_seconds": 1.4351921998895705,
+          "parent_os_peak_rss_bytes": 384606208,
+          "configuration": "released16",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released16",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-100000\\released16"
+          ],
+          "seconds": 16.796448200009763,
+          "mib_per_second": 59.237112299961545,
+          "sampled_tree_peak_rss_bytes": 376729600
+        },
+        {
+          "campaigns": 100000,
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 15.009437600150704,
+          "rank_write_seconds": 1.4702433999627829,
+          "parent_os_peak_rss_bytes": 380559360,
+          "configuration": "released16",
+          "repetition": 2,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released16",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-100000\\released16"
+          ],
+          "seconds": 16.894489699974656,
+          "mib_per_second": 58.893349602974865,
+          "sampled_tree_peak_rss_bytes": 370696192
+        },
+        {
+          "campaigns": 100000,
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 8.997712300159037,
+          "rank_write_seconds": 1.5370654999278486,
+          "parent_os_peak_rss_bytes": 574849024,
+          "configuration": "released",
+          "repetition": 2,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-100000\\released"
+          ],
+          "seconds": 10.949561899993569,
+          "mib_per_second": 90.8687577961498,
+          "sampled_tree_peak_rss_bytes": 548257792
+        },
+        {
+          "campaigns": 100000,
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 9.042571800062433,
+          "rank_write_seconds": 1.4051051998976618,
+          "parent_os_peak_rss_bytes": 593678336,
+          "configuration": "current",
+          "repetition": 2,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-100000\\current"
+          ],
+          "seconds": 10.941304800100625,
+          "mib_per_second": 90.9373339325411,
+          "sampled_tree_peak_rss_bytes": 578220032
+        },
+        {
+          "campaigns": 100000,
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 9.312437900109217,
+          "rank_write_seconds": 1.3958964999765158,
+          "parent_os_peak_rss_bytes": 590295040,
+          "configuration": "current",
+          "repetition": 3,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-100000\\current"
+          ],
+          "seconds": 11.161182600073516,
+          "mib_per_second": 89.14584806254416,
+          "sampled_tree_peak_rss_bytes": 594370560
+        },
+        {
+          "campaigns": 100000,
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 9.315401500090957,
+          "rank_write_seconds": 1.6550349998287857,
+          "parent_os_peak_rss_bytes": 581754880,
+          "configuration": "released",
+          "repetition": 3,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-100000\\released"
+          ],
+          "seconds": 11.395856999792159,
+          "mib_per_second": 87.31007139547398,
+          "sampled_tree_peak_rss_bytes": 542543872
+        },
+        {
+          "campaigns": 100000,
+          "aggregate_sha256": "69da80a37ba0681e9427da1fbbed08290d8faf746d06212cadc4e94f20c6db36",
+          "output_sha256": {
+            "top10_ctr.csv": "607998c4898e38d4c21cc1be8ee762706d7f8f010b70fde66f19e74df620ab2a",
+            "top10_cpa.csv": "8a4ee68d57116960eea8d4c666646d3b35fbac8e05efe774e6e57c486629b271"
+          },
+          "oracle_compared": true,
+          "aggregate_seconds": 14.825725500006229,
+          "rank_write_seconds": 1.428026600042358,
+          "parent_os_peak_rss_bytes": 379678720,
+          "configuration": "released16",
+          "repetition": 3,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released16",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-100000\\released16"
+          ],
+          "seconds": 16.697009700117633,
+          "mib_per_second": 59.5898970015844,
+          "sampled_tree_peak_rss_bytes": 372981760
+        }
+      ]
+    }
+  ]
+}

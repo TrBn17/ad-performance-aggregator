@@ -6,6 +6,7 @@ from functools import partial
 import pytest
 
 from ad_aggregator import polars_baseline, polars_experimental, python_engine
+from ad_aggregator.cli import main
 from ad_aggregator.core import FIELDS
 
 ENGINES = [
@@ -151,3 +152,37 @@ def test_literal_unquoted_quote_does_not_hold_following_rows(
             polars_experimental.aggregate(path, batch_bytes=batch_bytes)
             == expected
         )
+
+
+def test_cli_batch_size_preserves_csvs_and_late_failure(tmp_path):
+    row = ["A", "2024-02-29", 2**63 - 1, 2, "0.000001", 1]
+    path = write_csv(tmp_path / "input.csv", [row] * 30000)
+    arguments = ["--input", str(path), "--output", str(tmp_path / "out")]
+    assert main(arguments) == 0
+    expected = {
+        name: (tmp_path / "out" / name).read_bytes()
+        for name in ("top10_ctr.csv", "top10_cpa.csv")
+    }
+    assert main([*arguments, "--batch-mib", "1"]) == 0
+    for name, content in expected.items():
+        assert (tmp_path / "out" / name).read_bytes() == content
+    with path.open("a", encoding="utf-8") as target:
+        target.write("A,2025-02-29,1,1,1,1\n")
+    assert main([*arguments, "--batch-mib", "1"]) == 1
+    for name, content in expected.items():
+        assert (tmp_path / "out" / name).read_bytes() == content
+
+
+@pytest.mark.parametrize(
+    "options",
+    [["--batch-mib", value] for value in ("0", "-1", "1.5", "NaN")]
+    + [
+        ["--batch-mib", "16", "--engine", name]
+        for name in ("python", "optimized", "multiprocessing")
+    ],
+)
+def test_cli_invalid_batch_options(tmp_path, options):
+    with pytest.raises(SystemExit) as error:
+        main(["--input", "missing.csv", "--output", str(tmp_path), *options])
+    assert error.value.code == 2
+    assert not list(tmp_path.iterdir())

@@ -1,0 +1,1228 @@
+{
+  "command": [
+    "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+    "scripts/study_memory.py",
+    "--input",
+    "data/ad_data.csv",
+    "benchmark-output/memory-study-data/campaigns-100000.csv",
+    "--profile",
+    "--report",
+    "benchmarks/memory-lifetimes-final-windows.json"
+  ],
+  "started_utc": "2026-11-06T01:42:01.377622+00:00",
+  "complete": true,
+  "profile": true,
+  "python": "3.12.13 (main, Mar  3 2026, 15:01:35) [MSC v.1944 64 bit (AMD64)]",
+  "polars": "1.35.2",
+  "psutil": "7.1.3",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "cpu": "Intel64 Family 6 Model 183 Stepping 1, GenuineIntel",
+  "physical_cpus": 14,
+  "logical_cpus": 20,
+  "ram_bytes": 16959062016,
+  "environment": {
+    "POLARS_MAX_THREADS": "16"
+  },
+  "source_sha256": {
+    "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py": "f98d5c1b74442cf5e7e1a7b67f11d454c1f098575291b86cccd113e0787a2703",
+    "src\\ad_aggregator\\cli.py": "4c0a0591c99eed63273556362a282b3bf32d17f575007b38b0e36c5d8b7c4ecf",
+    "src\\ad_aggregator\\core.py": "d69d7cc94bfdd7ba40d54fe8aced2a97c3ef33080a23028d910b13fd06efb54a",
+    "src\\ad_aggregator\\multiprocessing_engine.py": "6142401cd748dbfa500e6065524d6b24b57b8e3a46536af6df656cac13eb64af",
+    "src\\ad_aggregator\\optimized_engine.py": "bffa6bbd2f19927bfd9b5f292b9a3444ed15b4fea07fdf9f0b9ce3fe23c64dc8",
+    "src\\ad_aggregator\\polars_baseline.py": "9a21bce0e1d00824a5682bc189a5b5f3045e1cce23cfdedcd86e94e8ee3722ad",
+    "src\\ad_aggregator\\polars_engine.py": "6ee7f2e6ba3c28db163d9447619beea00c83a48971de163b77433a1f4052a805",
+    "src\\ad_aggregator\\polars_experimental.py": "be8916f8c996dfbeef0c36dbbeba656c28606429cce6f5b293f1212f12a1366c",
+    "src\\ad_aggregator\\python_engine.py": "0c9a78417dc1f4eed57248a00374e697d26ac75bb7861d216e1e6080e332f4b3",
+    "src\\ad_aggregator\\__init__.py": "3f13366a2a7e7c8c2bb038fb2bf21c294cdc0e3e080efe4523715a2d37795d6d",
+    "src\\ad_aggregator\\__main__.py": "935a1c1166b0c1ea35a82256345000bf2c73ded718d77773bc27a71ecce28f7d"
+  },
+  "conditions": "Fresh sequential subprocesses, reverse order each repetition; warm cache from input hashing; background load uncontrolled. Wall includes startup/imports, full pipeline and aggregate/CSV hashes. OS peak RSS includes native allocations; simultaneous process-tree RSS sampled every 10 ms also includes workers (shared pages can count twice, short peaks can be missed). No workers spawned by this engine. Profiling uses only three batches with tracemalloc and GC; profile timings are not performance evidence. Analytical oracle read/compare included for synthetic inputs.",
+  "datasets": [
+    {
+      "input": "data\\ad_data.csv",
+      "input_bytes": 1043304870,
+      "input_sha256": "4e9c87cc0b408f043917f5f7ee0101ba09899ad79f154358e9a2da374cfd60eb",
+      "runs": [
+        {
+          "events": [
+            {
+              "phase": "start",
+              "python_live_bytes": 320,
+              "python_peak_bytes": 320,
+              "rss_bytes": 39686144,
+              "os_peak_rss_bytes": 39686144,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:817: size=176 B, count=3, average=59 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:92: size=160 B, count=1, average=160 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:71: size=160 B, count=1, average=160 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:692: size=120 B, count=1, average=120 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:72: size=56 B, count=2, average=28 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:940: size=24 B, count=1, average=24 B"
+              ]
+            },
+            {
+              "phase": "before_parse",
+              "python_live_bytes": 67120597,
+              "python_peak_bytes": 100675022,
+              "rss_bytes": 106823680,
+              "os_peak_rss_bytes": 140382208,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:41: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=907 B, count=6, average=151 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=360 B, count=3, average=120 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:100: size=280 B, count=1, average=280 B"
+              ],
+              "input_bytes": 33554475
+            },
+            {
+              "phase": "after_parse",
+              "python_live_bytes": 67127666,
+              "python_peak_bytes": 100683346,
+              "rss_bytes": 200294400,
+              "os_peak_rss_bytes": 233824256,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:41: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "<frozen abc>:123: size=3376 B, count=37, average=91 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=1828 B, count=12, average=152 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=1408 B, count=22, average=64 B"
+              ],
+              "frame_bytes": 27510739
+            },
+            {
+              "phase": "yielded",
+              "python_live_bytes": 33576249,
+              "python_peak_bytes": 100683346,
+              "rss_bytes": 166768640,
+              "os_peak_rss_bytes": 233824256,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "<frozen abc>:123: size=3376 B, count=37, average=91 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=2735 B, count=18, average=152 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=1856 B, count=29, average=64 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:193: size=1008 B, count=21, average=48 B"
+              ],
+              "batch": 0
+            },
+            {
+              "phase": "grouped",
+              "python_live_bytes": 33586447,
+              "python_peak_bytes": 100683346,
+              "rss_bytes": 330420224,
+              "os_peak_rss_bytes": 345296896,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=3669 B, count=24, average=153 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=1984 B, count=31, average=64 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:558: size=1224 B, count=25, average=49 B"
+              ],
+              "batch": 0,
+              "grouped_bytes": 3507
+            },
+            {
+              "phase": "after_merge_gc",
+              "python_live_bytes": 33604078,
+              "python_peak_bytes": 100683346,
+              "rss_bytes": 330670080,
+              "os_peak_rss_bytes": 345296896,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.4 KiB, count=251, average=47 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=8797 B, count=251, average=35 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=4606 B, count=30, average=154 B"
+              ],
+              "batch": 0
+            },
+            {
+              "phase": "before_parse",
+              "python_live_bytes": 100719901,
+              "python_peak_bytes": 134274348,
+              "rss_bytes": 397946880,
+              "os_peak_rss_bytes": 431505408,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:41: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.4 KiB, count=251, average=47 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=8797 B, count=251, average=35 B"
+              ],
+              "input_bytes": 33554497
+            },
+            {
+              "phase": "after_parse",
+              "python_live_bytes": 100724193,
+              "python_peak_bytes": 134279871,
+              "rss_bytes": 420605952,
+              "os_peak_rss_bytes": 454164480,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:41: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.4 KiB, count=251, average=47 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=8797 B, count=251, average=35 B"
+              ],
+              "frame_bytes": 27511230
+            },
+            {
+              "phase": "yielded",
+              "python_live_bytes": 67172047,
+              "python_peak_bytes": 134279871,
+              "rss_bytes": 387072000,
+              "os_peak_rss_bytes": 454164480,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.4 KiB, count=251, average=47 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=8797 B, count=251, average=35 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B"
+              ],
+              "batch": 1
+            },
+            {
+              "phase": "grouped",
+              "python_live_bytes": 67175444,
+              "python_peak_bytes": 134279871,
+              "rss_bytes": 421408768,
+              "os_peak_rss_bytes": 454164480,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.4 KiB, count=251, average=47 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=8797 B, count=251, average=35 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B"
+              ],
+              "batch": 1,
+              "grouped_bytes": 3507
+            },
+            {
+              "phase": "after_merge_gc",
+              "python_live_bytes": 67168271,
+              "python_peak_bytes": 134279871,
+              "rss_bytes": 421437440,
+              "os_peak_rss_bytes": 454164480,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.6 KiB, count=256, average=47 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=10.9 KiB, count=301, average=37 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=8988 B, count=60, average=150 B"
+              ],
+              "batch": 1
+            },
+            {
+              "phase": "before_parse",
+              "python_live_bytes": 100729796,
+              "python_peak_bytes": 134284231,
+              "rss_bytes": 454385664,
+              "os_peak_rss_bytes": 487944192,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:41: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.6 KiB, count=256, average=47 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=10.9 KiB, count=301, average=37 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B"
+              ],
+              "input_bytes": 33554485
+            },
+            {
+              "phase": "after_parse",
+              "python_live_bytes": 100733890,
+              "python_peak_bytes": 134289596,
+              "rss_bytes": 435359744,
+              "os_peak_rss_bytes": 488579072,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:41: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.6 KiB, count=256, average=47 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=10.9 KiB, count=301, average=37 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=10.5 KiB, count=72, average=149 B"
+              ],
+              "frame_bytes": 27510525
+            },
+            {
+              "phase": "yielded",
+              "python_live_bytes": 67181837,
+              "python_peak_bytes": 134289596,
+              "rss_bytes": 401866752,
+              "os_peak_rss_bytes": 488579072,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.6 KiB, count=256, average=47 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=11.4 KiB, count=78, average=150 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=10.9 KiB, count=301, average=37 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B"
+              ],
+              "batch": 2
+            },
+            {
+              "phase": "grouped",
+              "python_live_bytes": 67185136,
+              "python_peak_bytes": 134289596,
+              "rss_bytes": 418299904,
+              "os_peak_rss_bytes": 488579072,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=12.3 KiB, count=84, average=149 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.6 KiB, count=256, average=47 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=10.9 KiB, count=301, average=37 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B"
+              ],
+              "batch": 2,
+              "grouped_bytes": 3507
+            },
+            {
+              "phase": "after_merge_gc",
+              "python_live_bytes": 67175367,
+              "python_peak_bytes": 134289596,
+              "rss_bytes": 418349056,
+              "os_peak_rss_bytes": 488579072,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=13.1 KiB, count=90, average=149 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.6 KiB, count=256, average=47 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=10.9 KiB, count=301, average=37 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B"
+              ],
+              "batch": 2
+            },
+            {
+              "phase": "closed_gc",
+              "python_live_bytes": 34406,
+              "python_peak_bytes": 134289596,
+              "rss_bytes": 351240192,
+              "os_peak_rss_bytes": 488579072,
+              "largest_python_sites": [
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=14.0 KiB, count=96, average=149 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=4352 B, count=32, average=136 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:817: size=1072 B, count=35, average=31 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:81: size=1024 B, count=16, average=64 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:72: size=952 B, count=34, average=28 B"
+              ]
+            }
+          ],
+          "configuration": "current",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "data\\ad_data.csv",
+            "--output",
+            "benchmark-output\\memory-study\\ad_data\\current",
+            "--profile"
+          ],
+          "seconds": 0.8682836999651045,
+          "mib_per_second": 1145.9077934326633,
+          "sampled_tree_peak_rss_bytes": 479612928
+        },
+        {
+          "events": [
+            {
+              "phase": "start",
+              "python_live_bytes": 320,
+              "python_peak_bytes": 320,
+              "rss_bytes": 39579648,
+              "os_peak_rss_bytes": 39579648,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:817: size=176 B, count=3, average=59 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:92: size=160 B, count=1, average=160 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:71: size=160 B, count=1, average=160 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:692: size=120 B, count=1, average=120 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:72: size=56 B, count=2, average=28 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:940: size=24 B, count=1, average=24 B"
+              ]
+            },
+            {
+              "phase": "before_parse",
+              "python_live_bytes": 33566177,
+              "python_peak_bytes": 100675022,
+              "rss_bytes": 73154560,
+              "os_peak_rss_bytes": 140271616,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:113: size=32.0 MiB, count=1, average=32.0 MiB",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=907 B, count=6, average=151 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=360 B, count=3, average=120 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:100: size=280 B, count=1, average=280 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=256 B, count=4, average=64 B"
+              ],
+              "input_bytes": 33554475
+            },
+            {
+              "phase": "after_parse",
+              "python_live_bytes": 33573282,
+              "python_peak_bytes": 100675022,
+              "rss_bytes": 166559744,
+              "os_peak_rss_bytes": 200089600,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:113: size=32.0 MiB, count=1, average=32.0 MiB",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "<frozen abc>:123: size=3376 B, count=37, average=91 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=1864 B, count=12, average=155 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=1408 B, count=22, average=64 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=632 B, count=5, average=126 B"
+              ],
+              "frame_bytes": 27510739
+            },
+            {
+              "phase": "yielded",
+              "python_live_bytes": 21871,
+              "python_peak_bytes": 100675022,
+              "rss_bytes": 133013504,
+              "os_peak_rss_bytes": 200089600,
+              "largest_python_sites": [
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "<frozen abc>:123: size=3376 B, count=37, average=91 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=2777 B, count=18, average=154 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=1856 B, count=29, average=64 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:193: size=1056 B, count=22, average=48 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=904 B, count=7, average=129 B"
+              ],
+              "batch": 0
+            },
+            {
+              "phase": "grouped",
+              "python_live_bytes": 31903,
+              "python_peak_bytes": 100675022,
+              "rss_bytes": 292700160,
+              "os_peak_rss_bytes": 307970048,
+              "largest_python_sites": [
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=3705 B, count=24, average=154 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=1920 B, count=30, average=64 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:558: size=1224 B, count=25, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=1088 B, count=8, average=136 B"
+              ],
+              "batch": 0,
+              "grouped_bytes": 3507
+            },
+            {
+              "phase": "after_merge_gc",
+              "python_live_bytes": 50128,
+              "python_peak_bytes": 100675022,
+              "rss_bytes": 292925440,
+              "os_peak_rss_bytes": 307970048,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.4 KiB, count=251, average=47 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=8797 B, count=251, average=35 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=4637 B, count=30, average=155 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=1520 B, count=1, average=1520 B"
+              ],
+              "batch": 0
+            },
+            {
+              "phase": "before_parse",
+              "python_live_bytes": 33611200,
+              "python_peak_bytes": 100720089,
+              "rss_bytes": 326635520,
+              "os_peak_rss_bytes": 393752576,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:113: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.4 KiB, count=251, average=47 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=8797 B, count=251, average=35 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=5553 B, count=36, average=154 B"
+              ],
+              "input_bytes": 33554497
+            },
+            {
+              "phase": "after_parse",
+              "python_live_bytes": 33615396,
+              "python_peak_bytes": 100720089,
+              "rss_bytes": 339464192,
+              "os_peak_rss_bytes": 393752576,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:113: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.4 KiB, count=251, average=47 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=8797 B, count=251, average=35 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=6473 B, count=42, average=154 B"
+              ],
+              "frame_bytes": 27511230
+            },
+            {
+              "phase": "yielded",
+              "python_live_bytes": 63154,
+              "python_peak_bytes": 100720089,
+              "rss_bytes": 305942528,
+              "os_peak_rss_bytes": 393752576,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.4 KiB, count=251, average=47 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=8797 B, count=251, average=35 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=7393 B, count=48, average=154 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=2944 B, count=46, average=64 B"
+              ],
+              "batch": 1
+            },
+            {
+              "phase": "grouped",
+              "python_live_bytes": 66444,
+              "python_peak_bytes": 100720089,
+              "rss_bytes": 362803200,
+              "os_peak_rss_bytes": 393752576,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.4 KiB, count=251, average=47 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=8797 B, count=251, average=35 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=8327 B, count=54, average=154 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=3008 B, count=47, average=64 B"
+              ],
+              "batch": 1,
+              "grouped_bytes": 3507
+            },
+            {
+              "phase": "after_merge_gc",
+              "python_live_bytes": 60044,
+              "python_peak_bytes": 100720089,
+              "rss_bytes": 362860544,
+              "os_peak_rss_bytes": 393752576,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.6 KiB, count=256, average=47 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=10.9 KiB, count=301, average=37 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=9261 B, count=60, average=154 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=2720 B, count=20, average=136 B"
+              ],
+              "batch": 1
+            },
+            {
+              "phase": "before_parse",
+              "python_live_bytes": 33621250,
+              "python_peak_bytes": 100730115,
+              "rss_bytes": 396431360,
+              "os_peak_rss_bytes": 463548416,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:113: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.6 KiB, count=256, average=47 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=10.9 KiB, count=301, average=37 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=10167 B, count=66, average=154 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B"
+              ],
+              "input_bytes": 33554485
+            },
+            {
+              "phase": "after_parse",
+              "python_live_bytes": 33625249,
+              "python_peak_bytes": 100730115,
+              "rss_bytes": 401575936,
+              "os_peak_rss_bytes": 463548416,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:113: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.6 KiB, count=256, average=47 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=10.9 KiB, count=301, average=37 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=10.8 KiB, count=72, average=154 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B"
+              ],
+              "frame_bytes": 27510525
+            },
+            {
+              "phase": "yielded",
+              "python_live_bytes": 73183,
+              "python_peak_bytes": 100730115,
+              "rss_bytes": 368074752,
+              "os_peak_rss_bytes": 463548416,
+              "largest_python_sites": [
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=11.7 KiB, count=78, average=154 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.6 KiB, count=256, average=47 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=10.9 KiB, count=301, average=37 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=3632 B, count=27, average=135 B"
+              ],
+              "batch": 2
+            },
+            {
+              "phase": "grouped",
+              "python_live_bytes": 76503,
+              "python_peak_bytes": 100730115,
+              "rss_bytes": 366682112,
+              "os_peak_rss_bytes": 463548416,
+              "largest_python_sites": [
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=12.6 KiB, count=84, average=154 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.6 KiB, count=256, average=47 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=10.9 KiB, count=301, average=37 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=3904 B, count=29, average=135 B"
+              ],
+              "batch": 2,
+              "grouped_bytes": 3507
+            },
+            {
+              "phase": "after_merge_gc",
+              "python_live_bytes": 67227,
+              "python_peak_bytes": 100730115,
+              "rss_bytes": 366764032,
+              "os_peak_rss_bytes": 463548416,
+              "largest_python_sites": [
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=13.5 KiB, count=90, average=154 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=11.6 KiB, count=256, average=47 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=10.9 KiB, count=301, average=37 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=4080 B, count=30, average=136 B"
+              ],
+              "batch": 2
+            },
+            {
+              "phase": "closed_gc",
+              "python_live_bytes": 34870,
+              "python_peak_bytes": 100730115,
+              "rss_bytes": 366776320,
+              "os_peak_rss_bytes": 463548416,
+              "largest_python_sites": [
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=14.4 KiB, count=96, average=154 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=4352 B, count=32, average=136 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:817: size=1072 B, count=35, average=31 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:81: size=1024 B, count=16, average=64 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:72: size=952 B, count=34, average=28 B"
+              ]
+            }
+          ],
+          "configuration": "released",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "data\\ad_data.csv",
+            "--output",
+            "benchmark-output\\memory-study\\ad_data\\released",
+            "--profile"
+          ],
+          "seconds": 0.9151598000898957,
+          "mib_per_second": 1087.212373842061,
+          "sampled_tree_peak_rss_bytes": 435142656
+        }
+      ]
+    },
+    {
+      "input": "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+      "input_bytes": 1043304901,
+      "input_sha256": "0ab9c2b255468fccb30e5018ab5ad1789bb432eb62b78f39157b2f501cb92600",
+      "runs": [
+        {
+          "events": [
+            {
+              "phase": "start",
+              "python_live_bytes": 320,
+              "python_peak_bytes": 320,
+              "rss_bytes": 39759872,
+              "os_peak_rss_bytes": 39759872,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:817: size=176 B, count=3, average=59 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:92: size=160 B, count=1, average=160 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:71: size=160 B, count=1, average=160 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:692: size=120 B, count=1, average=120 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:72: size=56 B, count=2, average=28 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:940: size=24 B, count=1, average=24 B"
+              ]
+            },
+            {
+              "phase": "before_parse",
+              "python_live_bytes": 67120759,
+              "python_peak_bytes": 100675185,
+              "rss_bytes": 106893312,
+              "os_peak_rss_bytes": 140451840,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:41: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=907 B, count=6, average=151 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=360 B, count=3, average=120 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:100: size=280 B, count=1, average=280 B"
+              ],
+              "input_bytes": 33554475
+            },
+            {
+              "phase": "after_parse",
+              "python_live_bytes": 67127828,
+              "python_peak_bytes": 100683508,
+              "rss_bytes": 177700864,
+              "os_peak_rss_bytes": 211230720,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:41: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "<frozen abc>:123: size=3376 B, count=37, average=91 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=1828 B, count=12, average=152 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=1408 B, count=22, average=64 B"
+              ],
+              "frame_bytes": 30142107
+            },
+            {
+              "phase": "yielded",
+              "python_live_bytes": 33576411,
+              "python_peak_bytes": 100683508,
+              "rss_bytes": 144158720,
+              "os_peak_rss_bytes": 211230720,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "<frozen abc>:123: size=3376 B, count=37, average=91 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=2735 B, count=18, average=152 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=1856 B, count=29, average=64 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:193: size=960 B, count=20, average=48 B"
+              ],
+              "batch": 0
+            },
+            {
+              "phase": "grouped",
+              "python_live_bytes": 33586768,
+              "python_peak_bytes": 100683508,
+              "rss_bytes": 283869184,
+              "os_peak_rss_bytes": 284524544,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=3668 B, count=24, average=153 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=2048 B, count=32, average=64 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:558: size=1224 B, count=25, average=49 B"
+              ],
+              "batch": 0,
+              "grouped_bytes": 7114134
+            },
+            {
+              "phase": "after_merge_gc",
+              "python_live_bytes": 83321137,
+              "python_peak_bytes": 100683508,
+              "rss_bytes": 434503680,
+              "os_peak_rss_bytes": 434503680,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=21.6 MiB, count=452592, average=50 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=15.3 MiB, count=452592, average=36 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.5 MiB, count=99709, average=111 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B"
+              ],
+              "batch": 0
+            },
+            {
+              "phase": "before_parse",
+              "python_live_bytes": 150436931,
+              "python_peak_bytes": 183991357,
+              "rss_bytes": 505155584,
+              "os_peak_rss_bytes": 625250304,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:41: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=21.6 MiB, count=452592, average=50 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=15.3 MiB, count=452592, average=36 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.5 MiB, count=99709, average=111 B"
+              ],
+              "input_bytes": 33554475
+            },
+            {
+              "phase": "after_parse",
+              "python_live_bytes": 150441086,
+              "python_peak_bytes": 183996950,
+              "rss_bytes": 488615936,
+              "os_peak_rss_bytes": 693039104,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:41: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=21.6 MiB, count=452592, average=50 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=15.3 MiB, count=452592, average=36 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.5 MiB, count=99709, average=111 B"
+              ],
+              "frame_bytes": 30142107
+            },
+            {
+              "phase": "yielded",
+              "python_live_bytes": 116889033,
+              "python_peak_bytes": 183996950,
+              "rss_bytes": 456421376,
+              "os_peak_rss_bytes": 693039104,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=21.6 MiB, count=452592, average=50 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=15.3 MiB, count=452592, average=36 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.5 MiB, count=99709, average=111 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B"
+              ],
+              "batch": 1
+            },
+            {
+              "phase": "grouped",
+              "python_live_bytes": 116892018,
+              "python_peak_bytes": 183996950,
+              "rss_bytes": 509337600,
+              "os_peak_rss_bytes": 693039104,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=21.6 MiB, count=452592, average=50 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=15.3 MiB, count=452592, average=36 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.5 MiB, count=99709, average=111 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B"
+              ],
+              "batch": 1,
+              "grouped_bytes": 7114289
+            },
+            {
+              "phase": "after_merge_gc",
+              "python_live_bytes": 122284167,
+              "python_peak_bytes": 183996950,
+              "rss_bytes": 585781248,
+              "os_peak_rss_bytes": 695054336,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=22.3 MiB, count=474980, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=19.9 MiB, count=552661, average=38 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.4 MiB, count=98001, average=111 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B"
+              ],
+              "batch": 1
+            },
+            {
+              "phase": "before_parse",
+              "python_live_bytes": 155845695,
+              "python_peak_bytes": 189400121,
+              "rss_bytes": 623894528,
+              "os_peak_rss_bytes": 764350464,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:41: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=22.3 MiB, count=474980, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=19.9 MiB, count=552661, average=38 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.4 MiB, count=98001, average=111 B"
+              ],
+              "input_bytes": 33554475
+            },
+            {
+              "phase": "after_parse",
+              "python_live_bytes": 155849690,
+              "python_peak_bytes": 189405554,
+              "rss_bytes": 616407040,
+              "os_peak_rss_bytes": 797970432,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:41: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=22.3 MiB, count=474980, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=19.9 MiB, count=552661, average=38 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.4 MiB, count=98001, average=111 B"
+              ],
+              "frame_bytes": 30142107
+            },
+            {
+              "phase": "yielded",
+              "python_live_bytes": 122297797,
+              "python_peak_bytes": 189405554,
+              "rss_bytes": 593825792,
+              "os_peak_rss_bytes": 797970432,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=22.3 MiB, count=474980, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=19.9 MiB, count=552661, average=38 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.4 MiB, count=98001, average=111 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=11.6 KiB, count=78, average=152 B"
+              ],
+              "batch": 2
+            },
+            {
+              "phase": "grouped",
+              "python_live_bytes": 122300845,
+              "python_peak_bytes": 189405554,
+              "rss_bytes": 632016896,
+              "os_peak_rss_bytes": 797970432,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=22.3 MiB, count=474980, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=19.9 MiB, count=552661, average=38 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.4 MiB, count=98001, average=111 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=12.5 KiB, count=84, average=152 B"
+              ],
+              "batch": 2,
+              "grouped_bytes": 7114223
+            },
+            {
+              "phase": "after_merge_gc",
+              "python_live_bytes": 122565521,
+              "python_peak_bytes": 189405554,
+              "rss_bytes": 580886528,
+              "os_peak_rss_bytes": 797970432,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:36: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:35: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=22.5 MiB, count=482213, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=19.9 MiB, count=552654, average=38 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.4 MiB, count=98001, average=111 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=13.4 KiB, count=90, average=153 B"
+              ],
+              "batch": 2
+            },
+            {
+              "phase": "closed_gc",
+              "python_live_bytes": 34906,
+              "python_peak_bytes": 189405554,
+              "rss_bytes": 318640128,
+              "os_peak_rss_bytes": 797970432,
+              "largest_python_sites": [
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=14.4 KiB, count=96, average=153 B",
+                "<frozen abc>:123: size=10.3 KiB, count=120, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=4352 B, count=32, average=136 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:817: size=1072 B, count=35, average=31 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:81: size=1024 B, count=16, average=64 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:72: size=952 B, count=34, average=28 B"
+              ]
+            }
+          ],
+          "configuration": "current",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "current",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-100000\\current",
+            "--profile"
+          ],
+          "seconds": 20.692599299829453,
+          "mib_per_second": 48.08352367180211,
+          "sampled_tree_peak_rss_bytes": 800636928
+        },
+        {
+          "events": [
+            {
+              "phase": "start",
+              "python_live_bytes": 320,
+              "python_peak_bytes": 320,
+              "rss_bytes": 39632896,
+              "os_peak_rss_bytes": 39632896,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:817: size=176 B, count=3, average=59 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:92: size=160 B, count=1, average=160 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:71: size=160 B, count=1, average=160 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:692: size=120 B, count=1, average=120 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:72: size=56 B, count=2, average=28 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:940: size=24 B, count=1, average=24 B"
+              ]
+            },
+            {
+              "phase": "before_parse",
+              "python_live_bytes": 33566338,
+              "python_peak_bytes": 100675185,
+              "rss_bytes": 73207808,
+              "os_peak_rss_bytes": 140324864,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:113: size=32.0 MiB, count=1, average=32.0 MiB",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=907 B, count=6, average=151 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=360 B, count=3, average=120 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:100: size=280 B, count=1, average=280 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=256 B, count=4, average=64 B"
+              ],
+              "input_bytes": 33554475
+            },
+            {
+              "phase": "after_parse",
+              "python_live_bytes": 33573443,
+              "python_peak_bytes": 100675185,
+              "rss_bytes": 144007168,
+              "os_peak_rss_bytes": 177537024,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:113: size=32.0 MiB, count=1, average=32.0 MiB",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "<frozen abc>:123: size=3376 B, count=37, average=91 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=1864 B, count=12, average=155 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=1408 B, count=22, average=64 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=632 B, count=5, average=126 B"
+              ],
+              "frame_bytes": 30142107
+            },
+            {
+              "phase": "yielded",
+              "python_live_bytes": 22032,
+              "python_peak_bytes": 100675185,
+              "rss_bytes": 110477312,
+              "os_peak_rss_bytes": 177537024,
+              "largest_python_sites": [
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "<frozen abc>:123: size=3376 B, count=37, average=91 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=2777 B, count=18, average=154 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=1856 B, count=29, average=64 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:193: size=1008 B, count=21, average=48 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=904 B, count=7, average=129 B"
+              ],
+              "batch": 0
+            },
+            {
+              "phase": "grouped",
+              "python_live_bytes": 32224,
+              "python_peak_bytes": 100675185,
+              "rss_bytes": 252399616,
+              "os_peak_rss_bytes": 253120512,
+              "largest_python_sites": [
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=3705 B, count=24, average=154 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:67: size=1984 B, count=31, average=64 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:558: size=1224 B, count=25, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=1088 B, count=8, average=136 B"
+              ],
+              "batch": 0,
+              "grouped_bytes": 7114042
+            },
+            {
+              "phase": "after_merge_gc",
+              "python_live_bytes": 49767356,
+              "python_peak_bytes": 100675185,
+              "rss_bytes": 403173376,
+              "os_peak_rss_bytes": 403173376,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=21.6 MiB, count=452592, average=50 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=15.3 MiB, count=452591, average=36 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.5 MiB, count=99712, average=111 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=4637 B, count=30, average=155 B"
+              ],
+              "batch": 0
+            },
+            {
+              "phase": "before_parse",
+              "python_live_bytes": 83328440,
+              "python_peak_bytes": 150437287,
+              "rss_bytes": 441503744,
+              "os_peak_rss_bytes": 593702912,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:113: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=21.6 MiB, count=452592, average=50 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=15.3 MiB, count=452591, average=36 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.5 MiB, count=99712, average=111 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B"
+              ],
+              "input_bytes": 33554475
+            },
+            {
+              "phase": "after_parse",
+              "python_live_bytes": 83332422,
+              "python_peak_bytes": 150437287,
+              "rss_bytes": 448139264,
+              "os_peak_rss_bytes": 626561024,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:113: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=21.6 MiB, count=452592, average=50 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=15.3 MiB, count=452591, average=36 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.5 MiB, count=99712, average=111 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B"
+              ],
+              "frame_bytes": 30142107
+            },
+            {
+              "phase": "yielded",
+              "python_live_bytes": 49780196,
+              "python_peak_bytes": 150437287,
+              "rss_bytes": 415625216,
+              "os_peak_rss_bytes": 634925056,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=21.6 MiB, count=452592, average=50 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=15.3 MiB, count=452591, average=36 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.5 MiB, count=99712, average=111 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=7394 B, count=48, average=154 B"
+              ],
+              "batch": 1
+            },
+            {
+              "phase": "grouped",
+              "python_live_bytes": 49783441,
+              "python_peak_bytes": 150437287,
+              "rss_bytes": 463814656,
+              "os_peak_rss_bytes": 634925056,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=21.6 MiB, count=452592, average=50 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=15.3 MiB, count=452591, average=36 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.5 MiB, count=99712, average=111 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=8323 B, count=54, average=154 B"
+              ],
+              "batch": 1,
+              "grouped_bytes": 7114600
+            },
+            {
+              "phase": "after_merge_gc",
+              "python_live_bytes": 55175650,
+              "python_peak_bytes": 150437287,
+              "rss_bytes": 539779072,
+              "os_peak_rss_bytes": 647565312,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=22.3 MiB, count=474981, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=19.9 MiB, count=552660, average=38 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.4 MiB, count=98001, average=111 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=9252 B, count=60, average=154 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B"
+              ],
+              "batch": 1
+            },
+            {
+              "phase": "before_parse",
+              "python_live_bytes": 88737086,
+              "python_peak_bytes": 155845933,
+              "rss_bytes": 593698816,
+              "os_peak_rss_bytes": 716410880,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:113: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=22.3 MiB, count=474981, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=19.9 MiB, count=552660, average=38 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.4 MiB, count=98001, average=111 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=10181 B, count=66, average=154 B"
+              ],
+              "input_bytes": 33554475
+            },
+            {
+              "phase": "after_parse",
+              "python_live_bytes": 88740863,
+              "python_peak_bytes": 155845933,
+              "rss_bytes": 620269568,
+              "os_peak_rss_bytes": 750407680,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:113: size=32.0 MiB, count=1, average=32.0 MiB",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=22.3 MiB, count=474981, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=19.9 MiB, count=552660, average=38 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.4 MiB, count=98001, average=111 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=10.8 KiB, count=72, average=154 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B"
+              ],
+              "frame_bytes": 30142107
+            },
+            {
+              "phase": "yielded",
+              "python_live_bytes": 55188801,
+              "python_peak_bytes": 155845933,
+              "rss_bytes": 587816960,
+              "os_peak_rss_bytes": 753266688,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=22.3 MiB, count=474981, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=19.9 MiB, count=552660, average=38 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.4 MiB, count=98001, average=111 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=11.7 KiB, count=78, average=154 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B"
+              ],
+              "batch": 2
+            },
+            {
+              "phase": "grouped",
+              "python_live_bytes": 55191664,
+              "python_peak_bytes": 155845933,
+              "rss_bytes": 611463168,
+              "os_peak_rss_bytes": 753266688,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=22.3 MiB, count=474981, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=19.9 MiB, count=552660, average=38 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.4 MiB, count=98001, average=111 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=12.6 KiB, count=84, average=154 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B"
+              ],
+              "batch": 2,
+              "grouped_bytes": 7114574
+            },
+            {
+              "phase": "after_merge_gc",
+              "python_live_bytes": 55456875,
+              "python_peak_bytes": 155845933,
+              "rss_bytes": 549654528,
+              "os_peak_rss_bytes": 753266688,
+              "largest_python_sites": [
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:112: size=22.5 MiB, count=482212, average=49 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\polars\\dataframe\\frame.py:11499: size=19.9 MiB, count=552653, average=38 B",
+                "D:\\Projects\\ad-performance-aggregator\\src\\ad_aggregator\\polars_engine.py:232: size=10.4 MiB, count=98001, average=111 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=13.6 KiB, count=90, average=154 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\pathlib.py:1013: size=8488 B, count=4, average=2122 B"
+              ],
+              "batch": 2
+            },
+            {
+              "phase": "closed_gc",
+              "python_live_bytes": 35009,
+              "python_peak_bytes": 155845933,
+              "rss_bytes": 336158720,
+              "os_peak_rss_bytes": 753266688,
+              "largest_python_sites": [
+                "C:\\Users\\Admin\\AppData\\Roaming\\uv\\python\\cpython-3.12-windows-x86_64-none\\Lib\\tracemalloc.py:59: size=14.5 KiB, count=96, average=154 B",
+                "<frozen abc>:123: size=10.4 KiB, count=121, average=88 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:74: size=4352 B, count=32, average=136 B",
+                "D:\\Projects\\ad-performance-aggregator\\.venv\\Lib\\site-packages\\psutil\\_pswindows.py:817: size=1072 B, count=35, average=31 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:81: size=1024 B, count=16, average=64 B",
+                "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py:72: size=952 B, count=34, average=28 B"
+              ]
+            }
+          ],
+          "configuration": "released",
+          "repetition": 1,
+          "command": [
+            "D:\\Projects\\ad-performance-aggregator\\.venv\\Scripts\\python.exe",
+            "D:\\Projects\\ad-performance-aggregator\\scripts\\study_memory.py",
+            "--worker",
+            "released",
+            "--input",
+            "benchmark-output\\memory-study-data\\campaigns-100000.csv",
+            "--output",
+            "benchmark-output\\memory-study\\campaigns-100000\\released",
+            "--profile"
+          ],
+          "seconds": 20.588621400063857,
+          "mib_per_second": 48.3263579882711,
+          "sampled_tree_peak_rss_bytes": 756199424
+        }
+      ]
+    }
+  ]
+}

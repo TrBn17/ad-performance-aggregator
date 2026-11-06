@@ -20,7 +20,17 @@ def main(argv: list[str] | None = None) -> int:
         choices=["python", "polars", "optimized", "multiprocessing"],
         default="polars",
     )
+    parser.add_argument(
+        "--batch-mib",
+        type=int,
+        help="Polars input batch MiB (default: 32; not an RSS cap)",
+    )
     args = parser.parse_args(argv)
+    if args.batch_mib is not None:
+        if args.batch_mib < 1:
+            parser.error("--batch-mib must be a positive integer")
+        if args.engine != "polars":
+            parser.error("--batch-mib requires --engine polars")
     try:
         if args.input.resolve() in {
             (args.output / name).resolve()
@@ -35,7 +45,12 @@ def main(argv: list[str] | None = None) -> int:
             from .multiprocessing_engine import aggregate
         else:
             from .polars_engine import aggregate
-        totals = aggregate(args.input)
+        if args.batch_mib is None:
+            totals = aggregate(args.input)
+        else:
+            totals = aggregate(
+                args.input, batch_bytes=args.batch_mib * 1024**2
+            )
         write_results(totals, args.output)
     except (InputError, OSError, UnicodeError, csv.Error) as error:
         print(f"error: {error}", file=sys.stderr)

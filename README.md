@@ -18,10 +18,26 @@ uv run --no-sync ad-aggregate --engine python --input data/ad_data.csv --output 
 ```
 
 `--engine python|polars|optimized|multiprocessing` defaults to **polars**.
+For a tighter memory budget, `--batch-mib 16` selects smaller Polars input
+batches; the default remains 32. This accepts positive whole MiB and requires
+the Polars engine. It limits input batch bytes, not RSS: campaign cardinality,
+record size and the unusual bare-quote fallback still affect memory.
 The two experimental Python variants are described in
 [python-experiments.md](benchmarks/python-experiments.md).
 Equivalent entry points are
 `python aggregator.py` and `python -m ad_aggregator` in the installed environment.
+
+**Technology choices.** Python handles orchestration, arbitrary-precision merging,
+exact ranking and presentation; Polars' Rust core handles columnar parsing,
+validation and grouping. This combines measured native throughput with portable
+Python code and packaged Polars wheels, while retaining a standard-library
+fallback. Native buffers cost memory, and wheel availability constrains supported
+platforms. A custom C engine could fuse parsing and aggregation, but would require
+maintaining CSV/Unicode handling, strict validation, overflow-safe arithmetic,
+bindings and platform builds as schemas and calculations grow. Develop it only
+if representative, correctness-equivalent benchmarks show that tuned Polars
+cannot meet a required latency or memory limit, and a C prototype meets that
+limit with enough benefit to fund ongoing testing and maintenance.
 
 ## Implementation and behavior
 
@@ -71,6 +87,14 @@ The final comparison is in
 Earlier Python and Polars measurements remain in
 [review-results.json](benchmarks/review-results.json).
 
+A [follow-up memory review](benchmarks/memory-follow-up.md) profiles Python
+buffer copies and native RSS, releases batch buffers before grouping, and
+compares the revised 32/16 MiB paths with the previous 32 MiB default on the
+original and 1K/10K/100K-campaign inputs. Its Windows measurements use different
+hardware and are kept separate from the earlier results above. Smaller batches
+offer substantial memory savings, but cost more time at high cardinality;
+`--batch-mib 16` is optional and the default remains 32 MiB.
+
 Docker/Linux validation also passed on the original input and reproducible
 ~1 GB inputs with 1K, 10K and 100K campaigns. At 100K campaigns, the optimized
 engine used **579.6 MiB** peak RSS versus **3,268.4 MiB** for the baseline, with
@@ -91,7 +115,7 @@ uv run --no-sync python scripts/verify_outputs.py --outputs results
 uv run --no-sync python scripts/benchmark.py --engines polars-baseline polars --repeats 3 --polars-threads 16 --report benchmarks/polars-memory-final.json
 ```
 
-The suite has 340 tests covering reference calculations, ranking ties, invalid
+The suite has 348 tests covering reference calculations, ranking ties, invalid
 input, precision, CLI entry points, output preservation and chunk boundaries.
 Full-data CSVs also
 passed an independent Decimal ranking/formatting audit. Polars is the only runtime

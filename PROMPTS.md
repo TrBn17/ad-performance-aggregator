@@ -130,3 +130,28 @@ Analyze whether the optimized implementation maintains its memory advantage as c
 Document the results, limitations, and recommendations. Preserve existing benchmarks and avoid changing the production implementation unless a correctness issue is discovered.
 
 Do not modify `AGENTS.md`, `REQUIREMENTS.md`, or `PROMPTS.md`.
+
+## Prompt 9 (More optimization choices)
+
+Review the existing optimization results and identify whether further memory
+reductions justify their performance and maintenance costs. Follow `AGENTS.md`.
+
+- Reuse the existing batch-size and thread benchmarks. Profile buffer copies,
+  intermediate allocations, and memory retention; optimize demonstrated
+  bottlenecks and benchmark only new configurations or implementation changes
+  against the current 32 MiB default.
+- Preserve strict validation, exact arithmetic, and identical aggregates and
+  CSVs. Verify promising changes on the original dataset and the existing
+  high-cardinality datasets. Consider an optional `--batch-mib` CLI setting
+  if the measured trade-offs warrant user configuration.
+- Use at least three sequential, alternating runs per comparison. Record
+  commands, input identities, environment, runtime, peak RSS including native
+  allocations and workers, and throughput. Keep platform results separate,
+  preserve previous reports, and run relevant correctness tests.
+- Add a concise **Technology choices** paragraph to README explaining the
+  Python + Polars architecture and its trade-offs against a custom native
+  engine. Cover performance, portability, validation, and maintenance as schemas
+  and aggregation requirements grow. Acknowledge Polars' Rust core and explain
+  what measured requirements would justify developing custom C code.
+
+Do not modify `AGENTS.md`,`REQUIREMENTS.md`, `PROMPTS.md`.

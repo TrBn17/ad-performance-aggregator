@@ -105,12 +105,18 @@ def _byte_batches(path: Path, batch_bytes: int) -> Iterator[pl.DataFrame]:
         pending = b""
         while block := source.read(batch_bytes):
             pending += block
+            del block
             end = _last_record_end(pending)
             if end < 0:
                 _check_record_buffer(pending)
                 continue
-            yield _read_bytes(header + pending[: end + 1])
+            data = header + pending[: end + 1]
             pending = pending[end + 1 :]
+            # Retain only the unfinished record during native validation.
+            frame = _read_bytes(data)
+            del data
+            yield frame
+            del frame
             _check_record_buffer(pending)
         if pending:
             yield _read_bytes(header + pending)
