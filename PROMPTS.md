@@ -115,3 +115,18 @@ Preserve strict validation and exact output equivalence. Aim for **under 1 GB RA
 Document all experiments, compare trade-offs, and retain the best-performing practical solution based on measured evidence.
 
 Do not modify `AGENTS.md`, `REQUIREMENTS.md`, or `PROMPTS.md`.
+
+## Prompt 8 — Docker/Linux & Scalability Validation
+
+The latest Polars optimization reduced peak RAM by ~72% while maintaining good performance. Let's validate its reliability and scalability further.
+
+1. **Docker/Linux validation:** Build and run the updated implementation in Docker. Verify correctness, execution time, and peak memory usage.
+2. **High-cardinality testing:** Generate reproducible synthetic datasets with significantly more campaigns (e.g., 1K, 10K, 100K), while keeping the total dataset size comparable to the original (~1 GB).
+3. **Performance comparison:** Benchmark the original Polars baseline against the optimized implementation, measuring runtime, peak RSS, throughput, and memory scaling.
+4. **Correctness:** Verify identical campaign aggregates and output CSVs across implementations.
+
+Analyze whether the optimized implementation maintains its memory advantage as campaign cardinality increases.
+
+Document the results, limitations, and recommendations. Preserve existing benchmarks and avoid changing the production implementation unless a correctness issue is discovered.
+
+Do not modify `AGENTS.md`, `REQUIREMENTS.md`, or `PROMPTS.md`.
